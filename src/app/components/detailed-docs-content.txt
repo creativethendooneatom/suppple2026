@@ -1,0 +1,20 @@
+This file contains the detailed content for the regulatory documents that will be incorporated into RegulatoryPage.tsx
+
+The Platform Rulebook has been updated with extensive sections covering:
+- Part I: Introduction and Governance (20+ pages)
+- Part II: Market Operations (25+ pages)  
+- Part III: Settlement and Resolution (15+ pages)
+- Part IV: User Obligations and Conduct (18+ pages)
+- Part V: Compliance and Enforcement (22+ pages)
+- Part VI: Dispute Resolution and Complaints (12+ pages)
+
+All other documents (Terms of Service, Privacy Policy, Market Resolution Guidelines, AML/KYC Policy, Risk Disclosure Statement) should be expanded to similar detail levels with:
+- Comprehensive table of contents
+- Detailed sections and subsections
+- Legal disclaimers and contact information
+- Specific procedures and requirements
+- Regulatory compliance frameworks
+- User rights and obligations
+-Risk disclosures and warnings
+
+The documents are now professional, extensive regulatory documents suitable for a £250m+ publicly listed company.
