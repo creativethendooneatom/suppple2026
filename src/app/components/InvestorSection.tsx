@@ -5,14 +5,14 @@ import { motion } from 'motion/react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from './ui/tabs';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from './ui/accordion';
 import { useState } from 'react';
-import goitseKonopiImg from 'figma:asset/1991109401c94ed7cf0b3f3064a5c1c6ea670ff4.png';
-import phillipChaukeImg from 'figma:asset/cc0b9900d37fc28609838772433a1e58f0663428.png';
-import leaAnneMosesImg from 'figma:asset/22ae7a4b8de1afffe70b6ec1a19f0332a3710d5c.png';
-import paliLehohlaImg from 'figma:asset/fcdb6b7157f45fb37ab58704980f77b0ae54a4bb.png';
-import lwaziManziImg from 'figma:asset/82a33862dcddcab8b3e9ac7960dc24d6577d122d.png';
-import marinaShortImg from 'figma:asset/e2632e7dfe34966fabf1db2227321ed1111381bd.png';
-import randallCarolissenImg from 'figma:asset/9736a521df3514cbe5baa43be8950201687822f1.png';
-import investorRelationsImg from 'figma:asset/1695d71da28cdc7f25b2f76b1e24c511550c5caf.png';
+import goitseKonopiImg from '../../assets/1991109401c94ed7cf0b3f3064a5c1c6ea670ff4.png';
+import phillipChaukeImg from '../../assets/cc0b9900d37fc28609838772433a1e58f0663428.png';
+import leaAnneMosesImg from '../../assets/22ae7a4b8de1afffe70b6ec1a19f0332a3710d5c.png';
+import paliLehohlaImg from '../../assets/fcdb6b7157f45fb37ab58704980f77b0ae54a4bb.png';
+import lwaziManziImg from '../../assets/82a33862dcddcab8b3e9ac7960dc24d6577d122d.png';
+import marinaShortImg from '../../assets/e2632e7dfe34966fabf1db2227321ed1111381bd.png';
+import randallCarolissenImg from '../../assets/9736a521df3514cbe5baa43be8950201687822f1.png';
+import investorRelationsImg from '../../assets/1695d71da28cdc7f25b2f76b1e24c511550c5caf.png';
 
 export function InvestorSection() {
   const [selectedYear, setSelectedYear] = useState('2025');

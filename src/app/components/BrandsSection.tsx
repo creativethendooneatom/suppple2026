@@ -2,11 +2,11 @@ import { motion } from 'motion/react';
 import { Trophy, Gamepad2, Star, Target, Globe, TrendingUp } from 'lucide-react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from './ui/tabs';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from './ui/accordion';
-import makerrrLogo from 'figma:asset/a43e4904f855e7ec564fd9161424505e0b04623c.png';
-import seeekLogo from 'figma:asset/20ede8cda97ad2eb6b1a280de67e894930202cc0.png';
-import grioLogo from 'figma:asset/096d4fc46974c6f935b21bbacbca7e805f856062.png';
-import digitalGamingLogo from 'figma:asset/ec381205e8b0dcbb46f479c939b62f30bdbb5c03.png';
-import predictionMarketLogo from 'figma:asset/d1816d16664454bc1d2bbbd5c2859f136c930066.png';
+import makerrrLogo from '../../assets/a43e4904f855e7ec564fd9161424505e0b04623c.png';
+import seeekLogo from '../../assets/20ede8cda97ad2eb6b1a280de67e894930202cc0.png';
+import grioLogo from '../../assets/096d4fc46974c6f935b21bbacbca7e805f856062.png';
+import digitalGamingLogo from '../../assets/ec381205e8b0dcbb46f479c939b62f30bdbb5c03.png';
+import predictionMarketLogo from '../../assets/d1816d16664454bc1d2bbbd5c2859f136c930066.png';
 
 export function BrandsSection() {
   const brands = [

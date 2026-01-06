@@ -1,7 +1,7 @@
 import { Briefcase, Heart, Lightbulb, Users2, GraduationCap, Coffee, Plane, DollarSign } from 'lucide-react';
 import { Button } from './ui/button';
 import { ImageWithFallback } from './figma/ImageWithFallback';
-import teamImage from 'figma:asset/808d5c74af84627a5b50722481592ffb7d64dd55.png';
+import teamImage from '../../assets/808d5c74af84627a5b50722481592ffb7d64dd55.png';
 import { useState } from 'react';
 
 export function CareersSection() {

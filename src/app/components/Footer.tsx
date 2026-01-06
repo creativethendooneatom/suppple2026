@@ -1,5 +1,5 @@
 import { Facebook, Twitter, Linkedin, Instagram, Youtube } from 'lucide-react';
-import logo from 'figma:asset/18353b9c0bd96a0dd59eeee798755a09f417174f.png';
+import logo from '../../assets/18353b9c0bd96a0dd59eeee798755a09f417174f.png';
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
