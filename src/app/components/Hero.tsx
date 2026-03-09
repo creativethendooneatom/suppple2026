@@ -35,7 +35,7 @@ export function Hero() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 max-w-5xl mx-auto"
         >
-          A Leading Technology Company
+          Building AI platforms for African markets
         </motion.h1>
         
         <motion.p 
@@ -44,7 +44,7 @@ export function Hero() {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="text-sm md:text-base text-white/90 mb-12 max-w-3xl mx-auto"
         >
-          A global technology powerhouse of popular AI powered Sports and iGaming brands, in partnership with licensed operators across multiple jurisdictions with leading positions in Africa.
+          A Luxembourg Stock Exchange listed technology group developing AI platforms and digital infrastructure, partnering with licensed operators and enterprises across Africa.
         </motion.p>
 
         <motion.div 
@@ -56,10 +56,10 @@ export function Hero() {
           <Button 
             size="lg" 
             variant="outline"
-            className="bg-white hover:bg-gray-50 border-2 border-gray-200"
+            className="bg-transparent hover:bg-white text-white hover:text-blue-900 border-2 border-white h-14 px-10 text-lg transition-colors"
             onClick={() => document.getElementById('brands')?.scrollIntoView({ behavior: 'smooth' })}
           >
-            Explore Our Platforms
+            Explore our AI Platforms
           </Button>
           <Button 
             size="lg" 
@@ -67,13 +67,6 @@ export function Hero() {
             onClick={() => document.getElementById('investors')?.scrollIntoView({ behavior: 'smooth' })}
           >
             Investor Relations
-          </Button>
-          <Button 
-            size="lg" 
-            className="border-2 border-white bg-transparent text-white hover:bg-white/10 px-8 font-semibold"
-            onClick={() => document.getElementById('careers')?.scrollIntoView({ behavior: 'smooth' })}
-          >
-            View Careers
           </Button>
         </motion.div>
       </div>

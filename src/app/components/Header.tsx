@@ -12,8 +12,6 @@ export function Header() {
     { label: 'Partnerships', href: '#partnerships' },
     { label: 'Investor Relations', href: '#investors' },
     { label: 'News & Media Center', href: '#news' },
-    { label: 'Help', href: '#help' },
-    { label: 'Regulatory', href: '#regulatory' },
     { label: 'Careers', href: '#careers' },
   ];
 

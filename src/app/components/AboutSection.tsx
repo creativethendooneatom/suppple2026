@@ -50,46 +50,46 @@ export function AboutSection() {
   const strategicPillars = [
     {
       icon: Target,
-      title: 'Market Leadership',
-      description: 'Maintain and expand our leading positions in core markets across Africa and globally through licensed partnerships.',
+      title: 'Platform-Led Model',
+      description: 'At the core of Suppple Group’s strategy is a platform-led approach. The Group invests in shared AI infrastructure, data science capabilities, and modular system architecture designed to support multiple applications and verticals over time.',
       keyPoints: [
-        'Top 3 market position in African AI and gaming technology',
-        'Strategic partnerships with 50+ licensed operators',
-        'Diversified revenue streams across five platforms',
-        'Focus on high-growth emerging markets'
+        'Shared AI infrastructure',
+        'Reusable components across data & models',
+        'Accelerated innovation',
+        'Long-term platform defensibility'
       ]
     },
     {
-      icon: Zap,
-      title: 'Technology Innovation',
-      description: 'Invest in cutting-edge AI and platform technologies to deliver exceptional user experiences and competitive advantages.',
+      icon: Globe,
+      title: 'Market Expansion and Partnerships',
+      description: 'Suppple Group pursues growth through disciplined expansion across African markets and selected international opportunities. Market entry is primarily achieved through licensed partnerships and enterprise relationships.',
       keyPoints: [
-        'Proprietary multimodal AI model (GRIO)',
-        'Real-time analytics and prediction market technology',
-        'Scalable cloud infrastructure',
-        'AI-powered personalization across all platforms'
+        'Disciplined expansion across African markets',
+        'Licensed partnerships & enterprise relationships',
+        'Efficient scaling',
+        'Regulatory consistency'
       ]
     },
     {
-      icon: Users2,
-      title: 'Customer-Centric Approach',
-      description: 'Put customers at the heart of everything we do, delivering safe, fair, and engaging experiences.',
+      icon: TrendingUp,
+      title: 'Strategic Development',
+      description: 'The Group continuously evaluates opportunities to enhance its platform capabilities through product development, partnerships, and selective acquisitions. Strategic decisions are guided by their ability to strengthen core technology.',
       keyPoints: [
-        'Millions of active users across our platforms',
-        'Industry-leading customer satisfaction scores',
-        'Comprehensive responsible gaming tools',
-        '24/7 customer support across all markets'
+        'Enhance platform capabilities',
+        'Strengthen core technology',
+        'Expand addressable markets',
+        'Support long-term scalability'
       ]
     },
     {
-      icon: Lightbulb,
-      title: 'Operational Excellence',
-      description: 'Drive efficiency and scalability through our asset-light business model and operational best practices.',
+      icon: Shield,
+      title: 'Responsible Technology and Governance',
+      description: 'Responsible technology is embedded within Suppple Group’s strategy. The Group operates with a regulatory-first mindset, integrating governance considerations into the design, deployment, and operation of its AI platforms.',
       keyPoints: [
-        'Asset-light partnership model',
-        'Best-in-class operational margins',
-        '99.99% platform uptime',
-        'Continuous process improvement'
+        'Regulatory-first mindset',
+        'Governance integration',
+        'Transparency & accountability',
+        'Operational resilience'
       ]
     }
   ];
@@ -271,7 +271,7 @@ export function AboutSection() {
             About Suppple
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Suppple Group is a LUXSE listed technology holding company of popular AI apps, and Sports and iGaming brands in Africa.
+            Suppple Group is a LUXSE listed technology company focused on the development of AI-enabled digital platforms for regulated markets.
           </p>
         </div>
 
@@ -279,10 +279,7 @@ export function AboutSection() {
         <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
           <TabsList className="w-full flex flex-wrap justify-start gap-2 bg-gray-50 p-2 rounded-xl border border-gray-200 mb-8">
             <TabsTrigger value="about" className="px-6 py-3">About</TabsTrigger>
-            <TabsTrigger value="strategy" className="px-6 py-3">Our Strategy</TabsTrigger>
-            <TabsTrigger value="responsibility" className="px-6 py-3">Responsible Technology</TabsTrigger>
-            <TabsTrigger value="board" className="px-6 py-3">Board of Directors</TabsTrigger>
-            <TabsTrigger value="executive" className="px-6 py-3">Executive Management</TabsTrigger>
+            <TabsTrigger value="strategy" className="px-6 py-3">Strategy</TabsTrigger>
           </TabsList>
 
           {/* About Tab */}
@@ -293,63 +290,11 @@ export function AboutSection() {
                 <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">Our Story</h3>
                 <div className="prose max-w-none">
                   <p className="text-lg text-gray-700 mb-6">
-                    Suppple Group is a LUXSE listed technology holding company of popular AI apps, and Sports and iGaming brands in Africa. 
-                    The group provides the underlying technology, and partners with licensed operators in multiple jurisdictions, 
-                    with leading positions in Africa.
-                  </p>
-                  <p className="text-lg text-gray-700 mb-6">
-                    Our portfolio includes five distinct AI-powered platforms: <strong>Prediction Market by Suppple</strong> (premier prediction market platform), 
-                    <strong> Seeek.ai</strong> (AI-powered search and discovery), <strong>Makerrr.ai</strong> (creative AI platform for makers), 
-                    <strong> GRIO</strong> (advanced multimodal AI model), and <strong>Digital Gaming</strong> (B2B gaming solutions).
-                  </p>
-                  <p className="text-lg text-gray-700 mb-6">
-                    Suppple Group is led by a team of technology, AI, betting, and gaming software pioneers with decades of industry experience. 
-                    They are responsible for a diverse workforce of colleagues who are located in 4 countries, serving millions of users across Africa and beyond.
+                    Suppple Group was founded with a singular focus: to build scalable technology for regulated markets. The Group has grown from a civic-tech pioneer into a diversified technology holding company, operating AI-powered platforms and gaming solution across Africa.
                   </p>
                   <p className="text-lg text-gray-700">
-                    With a market capitalization exceeding £250 million, we operate an asset-light business model through proprietary 
-                    data science and technology, ensuring operational excellence and scalability while maintaining regulatory compliance 
-                    across all markets.
+                    By combining proprietary data science, rigorous governance, and local market expertise, Suppple Group bridges the gap between complex regulation and digital innovation. Today, the Group’s platforms served millions of users, providing critical infrastructure for information, prediction, and entertainment.
                   </p>
-                </div>
-              </div>
-
-              {/* As Featured In */}
-              <div className="bg-blue-50 rounded-xl p-6 md:p-8 border border-blue-200">
-                <p className="text-sm font-bold text-gray-900 mb-4 text-center">As Featured In</p>
-                <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-4 items-center justify-items-center">
-                  {[
-                    { name: 'MoneyWeb', img: moneyWebLogo, isLogo: true },
-                    { name: 'IOL', img: iolLogo, isLogo: true },
-                    { name: 'Business Explainer', img: businessExplainerLogo, isLogo: true },
-                    { name: 'TechFinancials', img: techFinancialsLogo, isLogo: true },
-                    { name: 'Engineering News', img: engineeringNewsLogo, isLogo: true },
-                    { name: 'ITWeb', img: itWebLogo, isLogo: true },
-                    { name: 'Central News', img: centralNewsLogo, isLogo: true },
-                  ].map((outlet, idx) => (
-                    <div key={idx} className="group">
-                      <div className={`relative w-20 h-20 md:w-24 md:h-24 rounded-lg overflow-hidden border hover:border-blue-300 transition-all flex items-center justify-center p-2 ${
-                        outlet.name === 'MoneyWeb' 
-                          ? 'bg-[#1e3a8a] border-[#1e3a8a]' 
-                          : 'bg-white border-gray-200'
-                      }`}>
-                        {outlet.isLogo ? (
-                          <img 
-                            src={outlet.img}
-                            alt={outlet.name}
-                            className="w-full h-full object-contain group-hover:scale-105 transition-transform"
-                          />
-                        ) : (
-                          <ImageWithFallback 
-                            src={outlet.img}
-                            alt={outlet.name}
-                            className="w-full h-full object-contain opacity-60 group-hover:opacity-100 transition-opacity grayscale group-hover:grayscale-0"
-                          />
-                        )}
-                      </div>
-                      <p className="text-xs text-center text-gray-600 mt-2 font-semibold">{outlet.name}</p>
-                    </div>
-                  ))}
                 </div>
               </div>
 
@@ -516,48 +461,6 @@ export function AboutSection() {
                 </div>
               </AccordionContent>
             </AccordionItem>
-
-            {/* Our Journey to Global Leadership */}
-            <AccordionItem value="journey-leadership">
-              <AccordionTrigger className="px-6 md:px-8 text-xl md:text-2xl font-bold hover:no-underline">
-                Our Journey to Global Leadership
-              </AccordionTrigger>
-              <AccordionContent className="px-6 md:px-8">
-                <div className="prose max-w-none">
-                  <p className="text-lg text-gray-700 mb-6">
-                    From a single brand to a publicly-traded global powerhouse, Suppple Group has achieved remarkable milestones that shaped us into the industry leader we are today.
-                  </p>
-                  
-                  <div className="bg-gradient-to-r from-blue-600 to-blue-800 rounded-2xl p-6 md:p-8 text-white mb-6">
-                    <h4 className="text-2xl font-bold mb-4">10+ Years of Building Scalable Technology</h4>
-                    <p className="text-white/90 mb-6">Building the future of AI-powered technology and iGaming</p>
-                    
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                      <div className="text-center">
-                        <div className="text-3xl font-bold mb-1">2+</div>
-                        <div className="text-white/80 text-sm">Years Operating</div>
-                      </div>
-                      <div className="text-center">
-                        <div className="text-3xl font-bold mb-1">African</div>
-                        <div className="text-white/80 text-sm">Countries</div>
-                      </div>
-                      <div className="text-center">
-                        <div className="text-3xl font-bold mb-1">5+</div>
-                        <div className="text-white/80 text-sm">Licensed partners</div>
-                      </div>
-                      <div className="text-center">
-                        <div className="text-3xl font-bold mb-1">£250m+</div>
-                        <div className="text-white/80 text-sm">Market Cap</div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <p className="text-lg text-gray-700">
-                    Our journey has been marked by strategic expansion, technological innovation, and a commitment to excellence. Through licensed partnerships across Africa, we've established ourselves as a leading provider of AI-powered platforms and gaming technology, serving millions of users while maintaining the highest standards of regulatory compliance and corporate governance.
-                  </p>
-                </div>
-              </AccordionContent>
-            </AccordionItem>
           </Accordion>
 
           {/* Core Values */}
@@ -615,23 +518,11 @@ export function AboutSection() {
               <div className="bg-gradient-to-br from-blue-900 to-blue-800 rounded-2xl p-8 md:p-12 text-white">
                 <h3 className="text-3xl md:text-4xl font-bold mb-6">Our Strategic Vision</h3>
                 <p className="text-xl text-white/90 mb-6">
-                  To be the leading AI-powered technology platform provider serving millions across Africa and beyond, 
-                  delivering innovation, excellence, and sustainable growth through strategic partnerships.
+                  Suppple Group’s strategy is focused on building scalable AI platforms for regulated digital markets, with an emphasis on long-term value creation, disciplined governance, and operational resilience. The Group prioritises markets where technology depth, regulatory alignment, and trusted partnerships are critical to sustainable growth.
                 </p>
-                <div className="grid md:grid-cols-3 gap-6 mt-8">
-                  <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
-                    <div className="text-3xl font-bold mb-2">Vision</div>
-                    <p className="text-white/80">Global leader in AI and gaming technology</p>
-                  </div>
-                  <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
-                    <div className="text-3xl font-bold mb-2">Mission</div>
-                    <p className="text-white/80">Empower users through innovative AI platforms</p>
-                  </div>
-                  <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
-                    <div className="text-3xl font-bold mb-2">Values</div>
-                    <p className="text-white/80">Innovation, integrity, and responsibility</p>
-                  </div>
-                </div>
+                <p className="text-xl text-white/90">
+                  Our strategy combines proprietary platform development with a partnership-led operating model, enabling efficient scaling while maintaining regulatory compliance across jurisdictions.
+                </p>
               </div>
 
               {/* Strategic Pillars */}
@@ -668,136 +559,10 @@ export function AboutSection() {
                   ))}
                 </div>
               </div>
-
-              {/* Growth Strategy */}
-              <div className="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-8 md:p-12 border border-gray-200">
-                <h3 className="text-3xl font-bold text-gray-900 mb-8">Growth Strategy</h3>
-                <div className="grid md:grid-cols-3 gap-8">
-                  <div>
-                    <div className="text-4xl font-bold text-blue-600 mb-3">01</div>
-                    <h4 className="text-xl font-bold text-gray-900 mb-3">Geographic Expansion</h4>
-                    <p className="text-gray-600">
-                      Expand our presence across new African markets and global territories through strategic partnerships and licensing.
-                    </p>
-                  </div>
-                  <div>
-                    <div className="text-4xl font-bold text-blue-600 mb-3">02</div>
-                    <h4 className="text-xl font-bold text-gray-900 mb-3">Platform Development</h4>
-                    <p className="text-gray-600">
-                      Continuous innovation in AI capabilities, launching new features and platforms to serve evolving customer needs.
-                    </p>
-                  </div>
-                  <div>
-                    <div className="text-4xl font-bold text-blue-600 mb-3">03</div>
-                    <h4 className="text-xl font-bold text-gray-900 mb-3">Strategic M&A</h4>
-                    <p className="text-gray-600">
-                      Pursue strategic acquisitions and partnerships to accelerate growth and expand our technology capabilities.
-                    </p>
-                  </div>
-                </div>
-              </div>
             </div>
           </TabsContent>
 
-          {/* Responsible Technology Tab */}
-          <TabsContent value="responsibility" className="mt-8">
-            <div className="space-y-12">
-              {/* Hero Section */}
-              <div className="bg-gradient-to-br from-blue-900 to-purple-900 rounded-2xl p-8 md:p-12 text-white text-center">
-                <Shield className="mx-auto mb-6 text-white" size={64} />
-                <h3 className="text-4xl font-bold mb-6">Responsible Technology Commitment</h3>
-                <p className="text-xl text-white/90 max-w-4xl mx-auto">
-                  We are committed to developing and deploying AI and technology in a responsible, ethical, and sustainable manner. 
-                  Our platforms prioritize user safety, privacy, and wellbeing while driving innovation.
-                </p>
-              </div>
 
-              {/* Responsibility Principles */}
-              <div>
-                <h3 className="text-3xl font-bold text-gray-900 mb-8 text-center">Our Principles</h3>
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                  {responsibilityPrinciples.map((principle, index) => (
-                    <motion.div
-                      key={index}
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.5, delay: index * 0.1 }}
-                      viewport={{ once: true }}
-                      className="bg-white rounded-2xl p-8 border border-gray-200 hover:border-blue-300 hover:shadow-lg transition-all"
-                    >
-                      <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-6">
-                        <principle.icon className="text-blue-600" size={24} />
-                      </div>
-                      <h4 className="text-xl font-bold text-gray-900 mb-3">{principle.title}</h4>
-                      <p className="text-gray-600 mb-4">{principle.description}</p>
-                      <ul className="space-y-2">
-                        {principle.features.map((feature, idx) => (
-                          <li key={idx} className="flex items-start gap-2 text-sm text-gray-700">
-                            <span className="text-green-600 mt-0.5">✓</span>
-                            <span>{feature}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </motion.div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Certifications & Compliance */}
-              <div className="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-8 md:p-12 border border-gray-200">
-                <h3 className="text-3xl font-bold text-gray-900 mb-8 text-center">Certifications & Compliance</h3>
-                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                  <div className="text-center p-6 bg-white rounded-xl border border-gray-200">
-                    <Shield className="mx-auto mb-4 text-blue-600" size={40} />
-                    <h4 className="font-bold text-gray-900 mb-2">ISO 27001</h4>
-                    <p className="text-sm text-gray-600">Information Security</p>
-                  </div>
-                  <div className="text-center p-6 bg-white rounded-xl border border-gray-200">
-                    <Lock className="mx-auto mb-4 text-green-600" size={40} />
-                    <h4 className="font-bold text-gray-900 mb-2">GDPR</h4>
-                    <p className="text-sm text-gray-600">Data Privacy</p>
-                  </div>
-                  <div className="text-center p-6 bg-white rounded-xl border border-gray-200">
-                    <CheckCircle className="mx-auto mb-4 text-purple-600" size={40} />
-                    <h4 className="font-bold text-gray-900 mb-2">POPIA</h4>
-                    <p className="text-sm text-gray-600">Privacy Compliance</p>
-                  </div>
-                  <div className="text-center p-6 bg-white rounded-xl border border-gray-200">
-                    <Award className="mx-auto mb-4 text-orange-600" size={40} />
-                    <h4 className="font-bold text-gray-900 mb-2">SOC 2</h4>
-                    <p className="text-sm text-gray-600">Security Standards</p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Resources */}
-              <div className="bg-blue-50 rounded-2xl p-8 border border-blue-200">
-                <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">Support & Resources</h3>
-                <p className="text-gray-700 text-center mb-6 max-w-3xl mx-auto">
-                  We provide comprehensive resources and support for users, developers, and partners to ensure responsible technology use.
-                </p>
-                <div className="flex flex-wrap justify-center gap-4">
-                  <Button className="bg-blue-600 hover:bg-blue-700">
-                    Responsible AI Guidelines
-                  </Button>
-                  <Button variant="outline">
-                    Privacy Policy
-                  </Button>
-                  <Button variant="outline">
-                    Ethics Framework
-                  </Button>
-                  <Button variant="outline">
-                    Support Resources
-                  </Button>
-                </div>
-              </div>
-            </div>
-          </TabsContent>
-
-          {/* Board of Directors Tab */}
-          <TabsContent value="board" className="mt-8">
-            <div className="space-y-12">
-              {/* Board Overview */}
               <div className="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-8 md:p-12 border border-gray-200">
                 <h3 className="text-3xl font-bold text-gray-900 mb-6 text-center">Board of Directors</h3>
                 <p className="text-lg text-gray-700 text-center max-w-4xl mx-auto">

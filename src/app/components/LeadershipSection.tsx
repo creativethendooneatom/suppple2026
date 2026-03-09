@@ -15,7 +15,7 @@ export function LeadershipSection() {
     {
       name: 'Goitse Konopi',
       position: 'Group Chief Executive Officer',
-      bio: 'Brings product and engineering vision to the board. As CEO, his track record spans civic-tech, public infrastructure, and digital platforms serving millions. Goitse has been instrumental in growing Suppple Group into a global leader in sports betting and iGaming technology.',
+      bio: 'Goitse Konopi is Group Chief Executive Officer and an Executive Director of Suppple Group. He brings experience across digital platforms, public infrastructure, and technology enabled services. As CEO, he is responsible for overall strategy, platform development, and operational execution.',
       expertise: ['Strategic Leadership', 'Market Expansion', 'Product Innovation'],
       image: goitseKonopiImg,
       linkedin: 'https://www.linkedin.com/in/goitsekonopi/',
@@ -23,7 +23,7 @@ export function LeadershipSection() {
     {
       name: 'Phillip Chauke',
       position: 'Chief Financial Officer',
-      bio: 'Phillip brings extensive financial expertise and has been key in navigating Suppple Group through its successful LUXSE listing. He oversees all financial operations and investor relations.',
+      bio: 'Phillip Chauke serves as Chief Financial Officer and Executive Director of Suppple Group. He is responsible for financial management, reporting, capital markets engagement, and internal controls.',
       expertise: ['Financial Strategy', 'Public Markets', 'M&A'],
       image: phillipChaukeImg,
       linkedin: 'https://www.linkedin.com/in/phillipchauke/',
@@ -101,7 +101,7 @@ export function LeadershipSection() {
             viewport={{ once: true }}
           >
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Executive Leadership Team
+              Leadership
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Our experienced leadership team brings together decades of expertise in technology, finance, operations, and the gaming industry.
@@ -154,29 +154,6 @@ export function LeadershipSection() {
                       </span>
                     ))}
                   </div>
-                </div>
-
-                <div className="flex gap-3 pt-4 border-t border-gray-200">
-                  {leader.linkedin ? (
-                    <a 
-                      href={leader.linkedin}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-2 text-gray-600 hover:text-blue-600 transition-colors text-sm"
-                    >
-                      <Linkedin size={16} />
-                      <span>LinkedIn</span>
-                    </a>
-                  ) : (
-                    <button className="flex items-center gap-2 text-gray-600 hover:text-blue-600 transition-colors text-sm">
-                      <Linkedin size={16} />
-                      <span>LinkedIn</span>
-                    </button>
-                  )}
-                  <button className="flex items-center gap-2 text-gray-600 hover:text-blue-600 transition-colors text-sm">
-                    <Mail size={16} />
-                    <span>Contact</span>
-                  </button>
                 </div>
               </div>
             </motion.div>
