@@ -51,7 +51,7 @@ export function AboutSection() {
     {
       icon: Target,
       title: 'Platform-Led Model',
-      description: 'At the core of Suppple Group’s strategy is a platform-led approach. The Group invests in shared AI infrastructure, data science capabilities, and modular system architecture designed to support multiple applications and verticals over time.',
+      description: 'At the core of Suppple Group\'s strategy is a platform-led approach. The Group invests in shared AI infrastructure, data science capabilities, and modular system architecture.',
       keyPoints: [
         'Shared AI infrastructure',
         'Reusable components across data & models',
@@ -62,7 +62,7 @@ export function AboutSection() {
     {
       icon: Globe,
       title: 'Market Expansion and Partnerships',
-      description: 'Suppple Group pursues growth through disciplined expansion across African markets and selected international opportunities. Market entry is primarily achieved through licensed partnerships and enterprise relationships.',
+      description: 'Suppple Group pursues growth through disciplined expansion across African markets and selected international opportunities. Market entry is primarily achieved through licensed partnerships.',
       keyPoints: [
         'Disciplined expansion across African markets',
         'Licensed partnerships & enterprise relationships',
@@ -73,7 +73,7 @@ export function AboutSection() {
     {
       icon: TrendingUp,
       title: 'Strategic Development',
-      description: 'The Group continuously evaluates opportunities to enhance its platform capabilities through product development, partnerships, and selective acquisitions. Strategic decisions are guided by their ability to strengthen core technology.',
+      description: 'The Group continuously evaluates opportunities to enhance its platform capabilities through product development, partnerships, and selective acquisitions. Strategic decisions are made with long-term value creation in mind.',
       keyPoints: [
         'Enhance platform capabilities',
         'Strengthen core technology',
@@ -84,7 +84,7 @@ export function AboutSection() {
     {
       icon: Shield,
       title: 'Responsible Technology and Governance',
-      description: 'Responsible technology is embedded within Suppple Group’s strategy. The Group operates with a regulatory-first mindset, integrating governance considerations into the design, deployment, and operation of its AI platforms.',
+      description: 'Responsible technology is embedded within Suppple Group\'s strategy. The Group operates with a regulatory-first mindset, integrating governance considerations into the design.',
       keyPoints: [
         'Regulatory-first mindset',
         'Governance integration',
@@ -169,7 +169,7 @@ export function AboutSection() {
     {
       name: 'Goitse Konopi',
       position: 'Group Chief Executive Officer',
-      bio: 'Brings product and engineering vision to the board. As CEO, his track record spans civic-tech, public infrastructure, and digital platforms serving millions. Goitse has been instrumental in growing Suppple Group into a global leader in sports betting and iGaming technology.',
+      bio: 'Brings product and engineering vision to the board. As CEO, his track record spans civic-tech, public infrastructure, and digital platforms serving millions.',
       expertise: ['Strategic Leadership', 'Market Expansion', 'Product Innovation'],
       image: goitseKonopiImg,
       linkedin: 'https://www.linkedin.com/in/goitsekonopi/',
@@ -177,7 +177,7 @@ export function AboutSection() {
     {
       name: 'Phillip Chauke',
       position: 'Chief Financial Officer',
-      bio: 'Phillip brings extensive financial expertise and has been key in navigating Suppple Group through its successful LUXSE listing. He oversees all financial operations and investor relations.',
+      bio: 'Phillip brings extensive financial expertise and has been key in navigating Suppple Group through its successful LUXSE listing.',
       expertise: ['Financial Strategy', 'Public Markets', 'M&A'],
       image: phillipChaukeImg,
       linkedin: 'https://www.linkedin.com/in/phillipchauke/',
@@ -185,7 +185,7 @@ export function AboutSection() {
     {
       name: 'Lea-Anne Moses',
       position: 'Chief Operating Officer',
-      bio: 'Lea-Anne is responsible for the operational excellence across all Suppple Group brands, ensuring seamless customer experiences and operational efficiency at scale.',
+      bio: 'Lea-Anne is responsible for the operational excellence across all Suppple Group brands, ensuring seamless customer experiences.',
       expertise: ['Operations', 'Technology', 'Customer Service'],
       image: leaAnneMosesImg,
       linkedin: 'https://www.linkedin.com/in/lea-anne-moses/',
@@ -193,19 +193,19 @@ export function AboutSection() {
     {
       name: 'Ochechuku Okere',
       position: 'Head of AI Technology',
-      bio: 'Ochechuku leads the technology vision and innovation strategy, driving the development of cutting-edge platforms that power millions of transactions daily.',
+      bio: 'Ochechuku leads the technology vision and innovation strategy, driving the development of cutting-edge platforms.',
       expertise: ['Technology Innovation', 'Platform Development', 'Security'],
     },
     {
       name: 'B.',
       position: 'Chief Legal & Compliance Officer',
-      bio: 'B. ensures Suppple Group maintains the highest standards of regulatory compliance across all jurisdictions, managing licensing and legal affairs globally.',
+      bio: 'B. ensures Suppple Group maintains the highest standards of regulatory compliance across all jurisdictions.',
       expertise: ['Regulatory Compliance', 'Licensing', 'Corporate Governance'],
     },
     {
       name: 'Tamoledi',
       position: 'Head of Gaming',
-      bio: 'Tamoledi drives the marketing strategy across all brands, building strong customer relationships and expanding market presence through innovative campaigns.',
+      bio: 'Tamoledi drives the marketing strategy across all brands, building strong customer relationships and expanding market presence.',
       expertise: ['Brand Strategy', 'Digital Marketing', 'Customer Acquisition'],
     },
   ];
@@ -215,7 +215,7 @@ export function AboutSection() {
     {
       name: 'Goitse Konopi',
       position: 'Executive Director',
-      background: 'Brings product and engineering vision to the board. As CEO, his track record spans civic-tech, public infrastructure, and digital platforms serving millions. Goitse has been instrumental in growing Suppple Group into a global leader in sports betting and iGaming technology.',
+      background: 'Brings product and engineering vision to the board. As CEO, his track record spans civic-tech, public infrastructure, and digital platforms.',
       image: goitseKonopiImg,
       committees: [],
       since: '2022'
@@ -223,7 +223,7 @@ export function AboutSection() {
     {
       name: 'Phillip Chauke',
       position: 'Executive Director & CFO',
-      background: 'Phillip brings extensive financial expertise to the board and has been key in navigating Suppple Group through its successful LUXSE listing. He oversees all financial operations, investor relations, and ensures robust financial governance across the organization.',
+      background: 'Phillip brings extensive financial expertise to the board and has been key in navigating Suppple Group through its successful LUXSE listing.',
       image: phillipChaukeImg,
       committees: ['Audit'],
       since: '2022'
@@ -231,7 +231,7 @@ export function AboutSection() {
     {
       name: 'Pali Lehohla',
       position: 'Independent Non-Executive Chairman',
-      background: 'South Africa\'s longest-serving Statistician-General and a global voice in public policy, data, and governance. He has chaired the UN Statistics Commission and co-chaired PARIS21. His systems-level insight anchors Suppple\'s institutional and policy alignment.',
+      background: 'South Africa\'s longest-serving Statistician-General and a global voice in public policy, data, and governance.',
       image: paliLehohlaImg,
       committees: ['Nomination', 'Governance'],
       since: '2023'
@@ -239,7 +239,7 @@ export function AboutSection() {
     {
       name: 'Lwazi Manzi',
       position: 'Independent Non-Executive Director',
-      background: 'Leads public health and strategy at continental scale as Head of the AU\'s COVID19 Secretariat. A physician by training, she guides Suppple\'s infrastructure work across health, data, and compliance.',
+      background: 'Leads public health and strategy at continental scale as Head of the AU\'s COVID19 Secretariat. A physician by training.',
       image: lwaziManziImg,
       committees: ['ESG', 'Risk'],
       since: '2023'
@@ -247,7 +247,7 @@ export function AboutSection() {
     {
       name: 'Randall Carolissen',
       position: 'Independent Non-Executive Director',
-      background: 'Former Dean of Johannesburg Business School and past administrator of NSFAS. His expertise spans public finance, governance, and digital transformation in education.',
+      background: 'Former Dean of Johannesburg Business School and past administrator of NSFAS. His expertise spans public finance, governance, and digital transformation.',
       image: randallCarolissenImg,
       committees: ['Audit', 'Compensation'],
       since: '2023'
@@ -255,7 +255,7 @@ export function AboutSection() {
     {
       name: 'Marina Short',
       position: 'Independent Non-Executive Director',
-      background: 'Former Chair of South Africa\'s Credit Bureau Association and Former CEO of the Consumer Profile Bureau. She brings regulatory, analytics, and financial system insight to Suppple\'s growth strategy.',
+      background: 'Former Chair of South Africa\'s Credit Bureau Association and Former CEO of the Consumer Profile Bureau.',
       image: marinaShortImg,
       committees: ['Audit', 'Risk'],
       since: '2024'
@@ -280,6 +280,8 @@ export function AboutSection() {
           <TabsList className="w-full flex flex-wrap justify-start gap-2 bg-gray-50 p-2 rounded-xl border border-gray-200 mb-8">
             <TabsTrigger value="about" className="px-6 py-3">About</TabsTrigger>
             <TabsTrigger value="strategy" className="px-6 py-3">Strategy</TabsTrigger>
+            <TabsTrigger value="governance" className="px-6 py-3">Governance</TabsTrigger>
+            <TabsTrigger value="executive" className="px-6 py-3">Leadership</TabsTrigger>
           </TabsList>
 
           {/* About Tab */}
@@ -290,10 +292,10 @@ export function AboutSection() {
                 <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">Our Story</h3>
                 <div className="prose max-w-none">
                   <p className="text-lg text-gray-700 mb-6">
-                    Suppple Group was founded with a singular focus: to build scalable technology for regulated markets. The Group has grown from a civic-tech pioneer into a diversified technology holding company, operating AI-powered platforms and gaming solution across Africa.
+                    Suppple Group was founded with a singular focus: to build scalable technology for regulated markets. The Group has grown from a civic-tech pioneer into a diversified technology and infrastructure company.
                   </p>
                   <p className="text-lg text-gray-700">
-                    By combining proprietary data science, rigorous governance, and local market expertise, Suppple Group bridges the gap between complex regulation and digital innovation. Today, the Group’s platforms served millions of users, providing critical infrastructure for information, prediction, and entertainment.
+                    By combining proprietary data science, rigorous governance, and local market expertise, Suppple Group bridges the gap between complex regulation and digital innovation.
                   </p>
                 </div>
               </div>
@@ -308,7 +310,7 @@ export function AboutSection() {
                   <AccordionContent className="px-6 md:px-8">
                     <div className="prose max-w-none">
                       <p className="text-lg text-gray-700">
-                        Predict is the first Bet Exchange, and Financial Services Conduct Authority (FSCA) (approval pending) regulated exchange dedicated to trading on the outcome of future events. From Budget Votes, GDP, Inflation, to Sports, Elections, Cabinet composition, and more. Predict allows people to trade on a broad range of topics. This is a new asset class of "Future Event Contract," where you can buy <strong>Yes or No positions</strong> with respect to whether an event will happen or not. Predict's vision is to allow people to capitalise on their opinions, trade in the domain of every day, and hedge risks that relate to them.
+                        Predict is a regulated exchange dedicated to trading on the outcome of future events through financial derivatives and prediction markets.
                       </p>
                     </div>
                   </AccordionContent>
@@ -322,13 +324,13 @@ export function AboutSection() {
                   <AccordionContent className="px-6 md:px-8">
                     <div className="prose max-w-none">
                       <p className="text-lg text-gray-700 mb-4">
-                        Predict's Future Event Contracts give people the ability to trade based on their opinions about a specific <strong>yes-or-no questions</strong>. For example, if you have NSFAS debt and are worried about a "grace-period" not passing through parliament, you can purchase a contract and get a payout if it doesn't pass. Or if you're worried about the economic fallout of the South Africa – US relationship, you can place a trade to hedge against it. If you've developed a trading strategy on party political outcomes, you can profit from that.
+                        Predict\'s Future Event Contracts give people the ability to trade based on their opinions about specific yes-or-no questions.
                       </p>
                       <p className="text-lg text-gray-700 mb-4">
-                        Future Event Contracts have an interesting side effect - the price that a given event contract trades at is actually a measure of the probability that the event will happen. Our inflation and SARB rate forecasts have been more accurate than economists, pundits, and traditional news outlets over the past year.
+                        The price that a given event contract trades at is a measure of the probability that the event will happen.
                       </p>
                       <p className="text-lg text-gray-700">
-                        We offer Future Event Contracts on a wide range of topics, including politics, economics, culture, finance, business, technology, entertainment, weather, commodities, and science.
+                        We offer Future Event Contracts on a wide range of topics including politics, economics, culture, finance, business, technology, and entertainment.
                       </p>
                     </div>
                   </AccordionContent>
@@ -341,130 +343,27 @@ export function AboutSection() {
                   </AccordionTrigger>
                   <AccordionContent className="px-6 md:px-8">
                     <div className="prose max-w-none space-y-6">
-                    <h5 className="text-xl font-bold text-gray-900 mb-3">Founding and Inspiration (2016–2023)</h5>
-                    <p className="text-lg text-gray-700 mb-4">
-                      <strong>Predict by Suppple</strong> was born out of a deep, practical engagement with public opinion, governance, and future outcomes in Africa.
-                    </p>
-                    <p className="text-lg text-gray-700 mb-4">
-                      Its founders, <strong>Goitse Konopi, Phillip Chauke and Eldrid Jordaan</strong> began working at the intersection of <strong>citizen engagement, data, and governance</strong> long before prediction markets were part of the mainstream conversation. As the co-founders of <strong>GovChat</strong>, South Africa's largest civic engagement platform, Goitse and Eldrid helped governments, municipalities, and public institutions engage millions of citizens through structured digital polling, sentiment analysis, and issue-based feedback.
-                    </p>
-                    <p className="text-lg text-gray-700 mb-4">
-                      Over years of running large user <strong>national surveys, municipal polls, State of the Nation sentiment tracking, and real-time public opinion dashboards</strong>, a clear pattern emerged: people consistently <em>had strong, measurable expectations about future events</em> elections, policy outcomes, service delivery failures, leadership changes, economic shocks yet there was <strong>no formal, incentive-aligned mechanism</strong> to aggregate those expectations into a signal that decision-makers could rely on.
-                    </p>
-                    <div className="bg-gray-50 rounded-lg p-6 mb-4 border-l-4 border-blue-600">
-                      <p className="text-gray-800 mb-2">Polls captured opinion.</p>
-                      <p className="text-gray-800 mb-2">Forecasts captured expert views.</p>
-                      <p className="text-gray-800 font-semibold">But no system captured conviction.</p>
+                      <h5 className="text-xl font-bold text-gray-900 mb-3">Founding and Inspiration (2016–2023)</h5>
+                      <p className="text-lg text-gray-700 mb-4">
+                        Predict by Suppple was born out of a deep, practical engagement with public opinion, governance, and future outcomes in Africa.
+                      </p>
+                      <p className="text-lg text-gray-700 mb-4">
+                        Its founders, Goitse Konopi, Phillip Chauke and Eldrid Jordaan began working at the intersection of citizen engagement, data, and governance.
+                      </p>
+                      <h5 className="text-xl font-bold text-gray-900 mt-8 mb-3">Key Milestones</h5>
+                      <ul className="list-disc pl-6 text-gray-700">
+                        <li className="mb-2">2016: Launch of GovChat, South Africa\'s largest civic engagement platform.</li>
+                        <li className="mb-2">2024: Formation of Suppple Group to focus on AI and prediction markets.</li>
+                        <li className="mb-2">2025: Launch of Prediction Market by Suppple, a dedicated prediction market platform.</li>
+                        <li className="mb-2">2026: Expansion into new African markets and global territories through strategic partnerships.</li>
+                      </ul>
                     </div>
-                    <p className="text-lg text-gray-700 mb-4">
-                      Goitse observed that many of the most important decisions by governments, investors, corporates, and citizens were ultimately driven by implicit predictions about the future, made without transparent price signals or accountability. Existing tools approximated expectations through surveys or financial proxies, but these were often blunt, slow, or distorted by incentives.
-                    </p>
-                    <p className="text-lg text-gray-700 mb-6">
-                      This gap between <strong>what people believe will happen</strong> and <strong>how those beliefs are expressed and weighted</strong> became the conceptual foundation for Predict.
-                    </p>
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
 
-                    <h5 className="text-xl font-bold text-gray-900 mb-3">From Polls to Markets: The Core Insight</h5>
-                    <p className="text-lg text-gray-700 mb-4">
-                      The insight behind Predict by Suppple was simple but powerful:
-                    </p>
-                    <p className="text-lg text-gray-700 font-semibold mb-4">
-                      Markets outperform polls when participants have skin in the game.
-                    </p>
-                    <p className="text-lg text-gray-700 mb-4">
-                      Years of civic polling revealed that while public opinion is informative, <strong>confidence-weighted expectations</strong> are far more predictive of real-world outcomes. Prediction markets transform belief into signal by attaching economic consequence to accuracy.
-                    </p>
-                    <p className="text-lg text-gray-700 mb-4">
-                      Rather than asking <em>"What do you think will happen?"</em>, Predict asks:<br />
-                      <em>"What are you willing to stake on what will happen?"</em>
-                    </p>
-                    <p className="text-lg text-gray-700 mb-6">
-                      This transition from polling to probabilistic markets represents a natural evolution of the work begun at <strong>GovChat</strong>, moving from civic voice to <strong>collective intelligence</strong>.
-                    </p>
-
-                    <h5 className="text-xl font-bold text-gray-900 mb-3 mt-8">Formation of Predict by Suppple (2024–Present)</h5>
-                    <p className="text-lg text-gray-700 mb-4">
-                      Predict was incubated within <strong>Suppple Group</strong>, a technology and infrastructure company focused on regulated digital markets, data systems, and next-generation financial platforms across emerging markets.
-                    </p>
-                    <p className="text-lg text-gray-700 mb-4">
-                      From inception, Predict was designed <strong>not as a gambling product</strong>, but as a <strong>regulated financial instrument platform</strong> aligned with derivatives law, market integrity principles, and global best practice.
-                    </p>
-                    <p className="text-lg text-gray-700 mb-3">Early development focused on:</p>
-                    <ul className="list-disc pl-8 mb-4 text-gray-700 space-y-1">
-                      <li>Event-based contract design</li>
-                      <li>Market microstructure suitable for low-liquidity emerging markets</li>
-                      <li>Robust KYC, AML, and surveillance frameworks</li>
-                      <li>Regulatory classification under financial, not gaming, legislation</li>
-                    </ul>
-                    <p className="text-lg text-gray-700 mb-6">
-                      The platform drew conceptual inspiration from regulated futures and options markets, adapting them for <strong>discrete real-world events</strong> such as elections, policy decisions, macroeconomic indicators, and major societal outcomes.
-                    </p>
-
-                    <h5 className="text-xl font-bold text-gray-900 mt-8 mb-3">Predict's Values</h5>
-                    <ul className="list-disc pl-8 mb-4 text-gray-700 space-y-1">
-                      <li>Climb the Steeper Mountain</li>
-                      <li>Steep Mountains are Steep</li>
-                      <li>Plan Deliberately, Climb Ferociously</li>
-                      <li>No Free Lunch</li>
-                      <li>It's Yours, Make it Work</li>
-                      <li>Tough Love</li>
-                    </ul>
-
-                    <h5 className="text-xl font-bold text-gray-900 mt-8 mb-3">Key Milestones</h5>
-                    <ul className="list-disc pl-6 text-gray-700">
-                      <li className="mb-2">2011: Konopi worked at the National Planning Commission (South Africa) on the "JAM" platform (crowd-sourcing information).</li>
-                      <li className="mb-2">2016: Launch of GovChat, South Africa's largest civic engagement platform.</li>
-                      <li className="mb-2">2018: Introduction of prediction/polling sentiment features within GovChat.</li>
-                      <li className="mb-2">2024: Formation of Suppple Group to focus on AI and prediction markets.</li>
-                      <li className="mb-2">2025: Launch of Prediction Market by Suppple, a dedicated prediction market platform.</li>
-                      <li className="mb-2">2025: LUXSE and A2X listing of Suppple Group, raising capital for growth and expansion.</li>
-                      <li className="mb-2">2026: Expansion into new African markets and global territories through strategic partnerships.</li>
-                    </ul>
-                  </div>
-                </AccordionContent>
-              </AccordionItem>
-
-              {/* Regulatory-First Philosophy */}
-              <AccordionItem value="regulatory-first" className="border-b">
-              <AccordionTrigger className="px-6 md:px-8 text-xl md:text-2xl font-bold hover:no-underline">
-                Regulatory-First Philosophy
-              </AccordionTrigger>
-              <AccordionContent className="px-6 md:px-8">
-                <div className="prose max-w-none">
-                  <p className="text-lg text-gray-700 mb-4">
-                    A defining characteristic of Predict by Suppple is its <strong>regulatory-first approach</strong>.
-                  </p>
-                  <p className="text-lg text-gray-700 mb-4">
-                    Unlike offshore or crypto-native prediction platforms that operated in legal grey zones, Predict was architected from day one to operate within <strong>formal financial regulatory regimes</strong>, engaging proactively with regulators and policymakers.
-                  </p>
-                  <p className="text-lg text-gray-700 mb-4">
-                    This approach reflects Goitse Konopi and Phillip Chauke's experience working directly with government, financial and public institutions, where trust, transparency, and compliance are non-negotiable.
-                  </p>
-                  <p className="text-lg text-gray-700 mb-3">Predict's long-term vision aligns with:</p>
-                  <ul className="list-disc pl-8 mb-6 text-gray-700 space-y-1">
-                    <li>Financial market licensing frameworks</li>
-                    <li>Consumer protection standards</li>
-                    <li>Market abuse and manipulation safeguards</li>
-                    <li>Responsible participation and disclosure</li>
-                  </ul>
-
-                  <h5 className="text-xl font-bold text-gray-900 mt-8 mb-3">Vision: A Market for the Future</h5>
-                  <p className="text-lg text-gray-700 mb-3">Predict by Suppple envisions a future where:</p>
-                  <ul className="list-disc pl-8 mb-4 text-gray-700 space-y-2">
-                    <li>Citizens can hedge against political, economic, and social risk</li>
-                    <li>Institutions can access real-time probabilistic signals about public expectations</li>
-                    <li>Policymakers can observe market-based forecasts as an input not a replacement to decision-making</li>
-                    <li>Emerging markets gain tools long available only in developed financial systems</li>
-                  </ul>
-                  <p className="text-lg text-gray-700">
-                    In this vision, <strong>prediction markets are not about speculation for its own sake</strong>, but about <strong>revealing truth through incentives</strong>, improving decision quality, and increasing societal resilience in the face of uncertainty.
-                  </p>
-                </div>
-              </AccordionContent>
-            </AccordionItem>
-          </Accordion>
-
-          {/* Core Values */}
-          <div>
+              {/* Core Values */}
+              <div>
                 <h3 className="text-3xl font-bold text-gray-900 mb-8 text-center">Our Core Values</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                   {values.map((value, index) => (
@@ -518,10 +417,10 @@ export function AboutSection() {
               <div className="bg-gradient-to-br from-blue-900 to-blue-800 rounded-2xl p-8 md:p-12 text-white">
                 <h3 className="text-3xl md:text-4xl font-bold mb-6">Our Strategic Vision</h3>
                 <p className="text-xl text-white/90 mb-6">
-                  Suppple Group’s strategy is focused on building scalable AI platforms for regulated digital markets, with an emphasis on long-term value creation, disciplined governance, and operational resilience. The Group prioritises markets where technology depth, regulatory alignment, and trusted partnerships are critical to sustainable growth.
+                  Suppple Group\'s strategy is focused on building scalable AI platforms for regulated digital markets, with an emphasis on long-term value creation.
                 </p>
                 <p className="text-xl text-white/90">
-                  Our strategy combines proprietary platform development with a partnership-led operating model, enabling efficient scaling while maintaining regulatory compliance across jurisdictions.
+                  Our strategy combines proprietary platform development with a partnership-led operating model.
                 </p>
               </div>
 
@@ -562,11 +461,13 @@ export function AboutSection() {
             </div>
           </TabsContent>
 
-
+          {/* Governance Tab */}
+          <TabsContent value="governance" className="mt-8">
+            <div className="space-y-12">
               <div className="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-8 md:p-12 border border-gray-200">
                 <h3 className="text-3xl font-bold text-gray-900 mb-6 text-center">Board of Directors</h3>
                 <p className="text-lg text-gray-700 text-center max-w-4xl mx-auto">
-                  Our independent board members bring diverse perspectives and deep expertise to guide Suppple Group's strategic direction 
+                  Our independent board members bring diverse perspectives and deep expertise to guide Suppple Group\'s strategic direction 
                   and ensure robust corporate governance. The board comprises experienced leaders from technology, finance, healthcare, 
                   education, and public policy sectors.
                 </p>
