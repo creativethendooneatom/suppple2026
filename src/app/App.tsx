@@ -2,13 +2,12 @@ import { Header } from './components/Header';
 import { Hero } from './components/Hero';
 import { AboutSection } from './components/AboutSection';
 import { BrandsSection } from './components/BrandsSection';
+import { FeaturedPlatformSection } from './components/FeaturedPlatformSection';
 import { ResponsibleGaming } from './components/ResponsibleGaming';
-import { InvestorSection } from './components/InvestorSection';
 import { CareersSection } from './components/CareersSection';
 import { Footer } from './components/Footer';
 import { LeadershipSection } from './components/LeadershipSection';
 import { ESGSection } from './components/ESGSection';
-import { PartnershipsSection } from './components/PartnershipsSection';
 import { NewsRoom } from './components/NewsRoom';
 import { PublishedAnnouncements } from './components/PublishedAnnouncements';
 import { ReportingSection } from './components/ReportingSection';
@@ -23,8 +22,7 @@ export default function App() {
         <Hero />
         <AboutSection />
         <BrandsSection />
-        <PartnershipsSection />
-        <InvestorSection />
+        <FeaturedPlatformSection />
         <LeadershipSection />
         <ESGSection />
         <PublishedAnnouncements />
