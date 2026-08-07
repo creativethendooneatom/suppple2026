@@ -77,13 +77,9 @@ function Home() {
     <Header />
     <main>
       <section className="hero"><IntelligenceNetwork />
-        <div className="shell hero-copy"><p className="eyebrow hero-eyebrow">SUPPPLE GROUP PLC <span>·</span> LUXSE: SUPPA</p><h1>The future of global <em>prediction markets</em> starts here.</h1><p className="hero-subtitle">Intelligence. Markets. Infrastructure.</p><p>Suppple is building regulated technology and market infrastructure for what happens next.</p><div className="hero-actions"><a className="button-link" href="#platforms">Explore Predikt <span>→</span></a><a className="text-link hero-secondary" href="/investors">Investor Centre <span>→</span></a></div></div>
+        <div className="shell hero-copy"><h1>Building intelligent platforms.</h1><p className="hero-subtitle">For what’s next.</p><p>Suppple is a public company building and operating a portfolio of intelligent platforms.</p></div>
         <MarketTape />
       </section>
-
-      <section className="signal-band"><div className="shell signal-grid"><div><b>1</b><span>Regulated market</span></div><div><b>13.5M+</b><span>GovChat active users</span></div><div><b>R66bn+</b><span>Annual SRD grants enabled</span></div><div><b>LuxSE</b><span>Listed · SUPPA</span></div></div></section>
-
-      <section className="infrastructure-section"><div className="shell"><p className="eyebrow">THE INTELLIGENT INFRASTRUCTURE LAYER</p><h2>Built for markets that matter.</h2><div className="infra-grid">{[['◆', 'Prediction Markets', 'Regulated, transparent and market-integrity-first event contracts.'], ['✦', 'AI-Powered Pricing', 'Intelligence and data systems that help markets become more useful.'], ['⚖', 'Regulated & Compliant', 'Compliance and governance designed into the infrastructure from the start.'], ['⬡', 'Mobile-First Reach', 'Data-light participation designed for the devices people already use.']].map(([icon, title, copy]) => <article key={title}><i>{icon}</i><h3>{title}</h3><p>{copy}</p></article>)}</div></div></section>
 
       <section id="platforms" className="feature-section shell">
         <div className="feature-copy"><p className="eyebrow">FEATURED PLATFORM</p><img src={prediktLogo} alt="Predikt" className="feature-logo" /><p className="powered">Predikt, powered by <strong>Ansino</strong></p><h2>Back your insight.</h2><p>Predikt is a regulated prediction market platform that enables participation in structured markets based on future events.</p><p>Developed in partnership with Ansino, a licensed South African gaming operator, Predikt introduces a new way to forecast real-world outcomes through market-based probabilities.</p><a className="text-link" href="mailto:hello@suppple.co.uk?subject=Predikt%20interest">Register interest <span>→</span></a></div>
@@ -103,6 +99,10 @@ function Home() {
       <section id="investors" className="investor-band"><div className="shell investor-content"><div><p className="eyebrow">INVESTOR RELATIONS</p><h2>Clear information for long-term shareholders.</h2></div><div className="investor-links"><a href="/investors#reports">Financial Reports <span>→</span></a><a href="/investors#announcements">Announcements <span>→</span></a><a href="/governance">Governance <span>→</span></a><a href="/investors#shareholders">Shareholder Information <span>→</span></a></div><a className="button-link" href="/investors">Visit Investor Relations <span>→</span></a></div></section>
     </main><Footer />
   </>;
+}
+
+function PlatformsPage() {
+  return <><Header /><main className="information-page platform-page"><div className="shell"><p className="eyebrow">SUPPPLE PLATFORMS</p><h1>Built for what&apos;s next.</h1><p className="page-intro">A portfolio of intelligent platforms spanning markets, AI-native creation and learning.</p><section className="platform-overview"><div><p className="eyebrow">FEATURED PLATFORM</p><img src={prediktLogo} alt="Predikt" className="feature-logo" /><p className="powered">Predikt, powered by <strong>Ansino</strong></p><h2>Back your insight.</h2><p>Predikt is a regulated prediction market platform that enables participation in structured markets based on future events.</p><a className="text-link" href="mailto:hello@suppple.co.uk?subject=Predikt%20interest">Register interest <span>→</span></a></div><ProductScreen /></section><section className="info-section"><p className="eyebrow">OUR PORTFOLIO</p><h2>Platforms that create durable value.</h2><div className="platform-grid">{platforms.map(([name, title, copy, logo]) => <article className="platform-card" key={name}><img src={logo as string} alt={`${name} logo`} /><h3>{title}</h3><p>{copy}</p><a href={name === 'Predikt' ? 'mailto:hello@suppple.co.uk?subject=Predikt%20interest' : 'mailto:hello@suppple.co.uk'}>{name === 'Predikt' ? 'Register interest' : 'Contact us'} <span>→</span></a></article>)}</div></section><section className="info-section platform-note"><h2>Designed to endure.</h2><p>Suppple invests in shared data infrastructure, responsible technology and resilient systems that enable its platforms to serve people and institutions over the long term.</p></section></div></main><Footer /></>;
 }
 
 const storyTimeline = [
@@ -204,6 +204,7 @@ function LegalPage({ privacy = false, cookies = false }: { privacy?: boolean; co
 }
 
 export default function App() {
+  if (window.location.pathname.startsWith('/platforms')) return <PlatformsPage />;
   if (window.location.pathname.startsWith('/our-story')) return <StoryPage page="story" />;
   if (window.location.pathname.startsWith('/company-overview')) return <StoryPage page="overview" />;
   if (window.location.pathname.startsWith('/leadership')) return <StoryPage page="leadership" />;
