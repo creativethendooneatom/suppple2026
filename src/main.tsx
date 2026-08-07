@@ -9,6 +9,7 @@
   import "./styles/predikt-fixes.css";
   import "./styles/header-alignment.css";
   import "./styles/detail-tabs.css";
+  import "./styles/investor-contrast.css";
 
   createRoot(document.getElementById("root")!).render(<App />);
   
