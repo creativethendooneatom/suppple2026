@@ -7,6 +7,8 @@
   import "./styles/light-inner-pages.css";
   import "./styles/predikt-page.css";
   import "./styles/predikt-fixes.css";
+  import "./styles/header-alignment.css";
+  import "./styles/detail-tabs.css";
 
   createRoot(document.getElementById("root")!).render(<App />);
   
