@@ -1,6 +1,6 @@
 import { Footer } from './components/Footer';
 import { Header } from './components/Header';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import prediktLogo from '../assets/predikt-logo-official.png';
 import makerrrLogo from '../assets/a43e4904f855e7ec564fd9161424505e0b04623c.png';
 import grioLogo from '../assets/096d4fc46974c6f935b21bbacbca7e805f856062.png';
@@ -50,7 +50,7 @@ function IntelligenceNetwork() {
     let width = 0; let height = 0; let frame = 0; let time = 0;
     const pointer = { x: -9999, y: -9999, active: false }; let hubs: Node[] = []; let nodes: Node[] = []; let pulses: Pulse[] = [];
     const palette = ['36,124,255', '124,92,255', '18,209,142', '34,211,238'];
-    const seed = () => { hubs = Array.from({ length: 14 }, (_, i) => ({ x: .1 + Math.random() * .8, y: .1 + Math.random() * .8, vx: (Math.random() - .5) * .0006, vy: (Math.random() - .5) * .0006, r: 6 + Math.random() * 5, phase: Math.random() * Math.PI * 2, color: palette[i % palette.length] })); nodes = Array.from({ length: 200 }, (_, i) => ({ x: Math.random(), y: Math.random(), vx: (Math.random() - .5) * .0004, vy: (Math.random() - .5) * .0004, r: 1 + Math.random() * 2.2, phase: Math.random() * Math.PI * 2, speed: .3 + Math.random() * 1.2, color: palette[i % palette.length] })); };
+    const seed = () => { hubs = Array.from({ length: 11 }, (_, i) => ({ x: .1 + Math.random() * .8, y: .1 + Math.random() * .8, vx: (Math.random() - .5) * .0006, vy: (Math.random() - .5) * .0006, r: 3 + Math.random() * 3, phase: Math.random() * Math.PI * 2, color: palette[i % palette.length] })); nodes = Array.from({ length: 150 }, (_, i) => ({ x: Math.random(), y: Math.random(), vx: (Math.random() - .5) * .0004, vy: (Math.random() - .5) * .0004, r: .55 + Math.random() * 1.35, phase: Math.random() * Math.PI * 2, speed: .3 + Math.random() * 1.2, color: palette[i % palette.length] })); };
     const resize = () => { const rect = canvas.getBoundingClientRect(); const scale = Math.min(window.devicePixelRatio, 2); width = rect.width; height = rect.height; canvas.width = width * scale; canvas.height = height * scale; context.setTransform(scale, 0, 0, scale, 0, 0); seed(); };
     const move = (event: PointerEvent) => { const rect = canvas.getBoundingClientRect(); pointer.x = event.clientX - rect.left; pointer.y = event.clientY - rect.top; pointer.active = true; };
     const leave = () => { pointer.active = false; };
@@ -60,7 +60,7 @@ function IntelligenceNetwork() {
       hubs.forEach((a, i) => hubs.slice(i + 1).forEach(b => { const d = Math.hypot((a.x - b.x) * width, (a.y - b.y) * height); if (d < width * .4) { line(a, b, Math.max(0, 1 - d / (width * .4)) * .18 * (.5 + Math.sin(time * 2 + i) * .5), true); if (Math.random() < .008) pulses.push({ a, b, progress: 0, duration: 1.5 + Math.random() }); } }));
       nodes.forEach((a, i) => nodes.slice(i + 1).forEach(b => { const d = Math.hypot((a.x - b.x) * width, (a.y - b.y) * height); if (d < width * .18) line(a, b, Math.max(0, 1 - d / (width * .18)) * .08, false); }));
       pulses = pulses.filter(p => { p.progress += .016 / p.duration; if (p.progress >= 1) return false; const x = (p.a.x + (p.b.x - p.a.x) * p.progress) * width; const y = (p.a.y + (p.b.y - p.a.y) * p.progress) * height; const alpha = Math.sin(p.progress * Math.PI) * .8; context.beginPath(); context.arc(x, y, 4, 0, Math.PI * 2); context.fillStyle = `rgba(${p.a.color},${alpha})`; context.fill(); return true; });
-      all.forEach(n => { const x = n.x * width; const y = n.y * height; const pulse = .5 + Math.sin(time * 2 + n.phase) * .5; const radius = n.r + pulse * .8; context.beginPath(); context.arc(x, y, radius * 3, 0, Math.PI * 2); context.fillStyle = `rgba(${n.color},.06)`; context.fill(); context.beginPath(); context.arc(x, y, radius, 0, Math.PI * 2); context.fillStyle = `rgba(${n.color},.72)`; context.fill(); context.beginPath(); context.arc(x, y, Math.max(.6, radius * .3), 0, Math.PI * 2); context.fillStyle = 'rgba(255,255,255,.8)'; context.fill(); });
+      all.forEach(n => { const x = n.x * width; const y = n.y * height; const pulse = .5 + Math.sin(time * 2 + n.phase) * .5; const radius = n.r + pulse * .45; context.beginPath(); context.arc(x, y, radius * 2, 0, Math.PI * 2); context.fillStyle = `rgba(${n.color},.035)`; context.fill(); context.beginPath(); context.arc(x, y, radius, 0, Math.PI * 2); context.fillStyle = `rgba(${n.color},.52)`; context.fill(); context.beginPath(); context.arc(x, y, Math.max(.4, radius * .25), 0, Math.PI * 2); context.fillStyle = 'rgba(255,255,255,.58)'; context.fill(); });
       frame = requestAnimationFrame(draw); };
     resize(); draw(); window.addEventListener('resize', resize); canvas.addEventListener('pointermove', move); canvas.addEventListener('pointerleave', leave); return () => { cancelAnimationFrame(frame); window.removeEventListener('resize', resize); canvas.removeEventListener('pointermove', move); canvas.removeEventListener('pointerleave', leave); };
   }, []);
@@ -102,7 +102,13 @@ function Home() {
 }
 
 function PlatformsPage() {
-  return <><Header /><main className="information-page platform-page"><div className="shell"><p className="eyebrow">SUPPPLE PLATFORMS</p><h1>Built for what&apos;s next.</h1><p className="page-intro">A portfolio of intelligent platforms spanning markets, AI-native creation and learning.</p><section className="platform-overview"><div><p className="eyebrow">FEATURED PLATFORM</p><img src={prediktLogo} alt="Predikt" className="feature-logo" /><p className="powered">Predikt, powered by <strong>Ansino</strong></p><h2>Back your insight.</h2><p>Predikt is a regulated prediction market platform that enables participation in structured markets based on future events.</p><a className="text-link" href="mailto:hello@suppple.co.uk?subject=Predikt%20interest">Register interest <span>→</span></a></div><ProductScreen /></section><section className="info-section"><p className="eyebrow">OUR PORTFOLIO</p><h2>Platforms that create durable value.</h2><div className="platform-grid">{platforms.map(([name, title, copy, logo]) => <article className="platform-card" key={name}><img src={logo as string} alt={`${name} logo`} /><h3>{title}</h3><p>{copy}</p><a href={name === 'Predikt' ? 'mailto:hello@suppple.co.uk?subject=Predikt%20interest' : 'mailto:hello@suppple.co.uk'}>{name === 'Predikt' ? 'Register interest' : 'Contact us'} <span>→</span></a></article>)}</div></section><section className="info-section platform-note"><h2>Designed to endure.</h2><p>Suppple invests in shared data infrastructure, responsible technology and resilient systems that enable its platforms to serve people and institutions over the long term.</p></section></div></main><Footer /></>;
+  const markets = [['Will inflation exceed 3% this quarter?', '62%', 'YES 62c', 'NO 38c'], ['2028 presidential election — winner', '44%', 'YES 44c', 'NO 56c'], ['FIFA World Cup 2026 — winner', '19%', 'YES 19c', 'NO 81c'], ['Bitcoin above $200,000 by Dec 31?', '38%', 'YES 38c', 'NO 62c']];
+  const features = [['⚡', 'Real-Time Markets', 'Thousands of markets updating continuously across every category.'], ['◎', 'Deep Liquidity', 'Order books designed to support professional-scale market activity.'], ['◈', 'Secure & Regulated', 'Built with compliance, custody and transparency at the core.'], ['⏱', 'Instant Settlement', 'Fast, fair and automatic settlement on every resolved contract.'], ['◫', 'Powerful API', 'Developer tooling for building on top of live market data.']];
+  return <><Header /><main className="information-page predikt-page"><div className="shell"><section className="predikt-intro" id="how-it-works"><p className="eyebrow">FLAGSHIP PLATFORM</p><img src={prediktLogo} alt="Predikt" className="feature-logo" /><h1>Markets for what happens next.</h1><p className="page-intro">A regulated exchange for event contracts — priced in real time by the collective judgment of every participant. Deeper liquidity, tighter spreads, faster settlement.</p><div className="predikt-tags">{['Event contracts', 'Elections', 'Sports', 'Economics', 'Commodities', 'AI-generated markets', 'Creator markets'].map(tag => <span key={tag}>{tag}</span>)}</div></section><section className="predikt-market-layout" id="markets"><div className="market-browser"><div className="market-browser-bar"><i /><i /><i /><span>predikt.com/markets</span></div>{markets.map(([question, probability, yes, no]) => <article key={question}><div><h2>{question}</h2><p><b>{yes}</b><span>{no}</span></p></div><strong>{probability}</strong></article>)}</div><div className="predikt-phone" aria-label="Predikt mobile market preview"><div className="phone-top">9:41 <span>●●●</span></div><div className="phone-brand">PREDIKT</div><p>Will Arsenal win the EPL this year?</p><div className="phone-bar"><i /></div><div className="phone-price"><b>YES 99c</b><span>NO 1c</span></div><div className="phone-actions"><b>YES 99c</b><span>NO 1c</span></div><p>Will Kaizer Chiefs win tonight?</p><div className="phone-bar phone-bar-two"><i /></div><div className="phone-price"><b>YES 62c</b><span>NO 38c</span></div></div></section><section className="predikt-details"><article><h2>How Predikt Works</h2><p>Predikt is Suppple&apos;s core product and primary revenue engine: an AI-powered prediction market platform that enables users to trade binary-outcome contracts on real-world events spanning macroeconomics, politics, entertainment and live global occurrences.</p><p>Each contract represents a verifiable yes/no claim, priced continuously between R0.00 and R1.00. The price is a direct mathematical expression of implied probability.</p></article><article><h2>Revenue Mechanics — Transparent &amp; Invariant</h2><p>A 10% trading fee applies on each matched contract&apos;s notional value, alongside a 1% settlement fee charged on winning contract payouts and retained in full by Suppple.</p><p>Suppple earns more as volumes grow, regardless of outcome — creating an exchange economics flywheel rather than a proprietary trading position.</p></article></section><section className="predikt-features" id="features"><p className="eyebrow">WHY PREDIKT</p><h2>Built for serious markets.</h2><div>{features.map(([icon, title, copy]) => <article key={title}><i>{icon}</i><h3>{title}</h3><p>{copy}</p></article>)}</div><aside><span>BUILT FOR INSTITUTIONAL-GRADE LIQUIDITY</span><b>Market Maker A</b><b>Market Maker B</b><b>Liquidity Partner C</b></aside></section><section className="predikt-ecosystem"><div className="ecosystem-center"><b>PREDIKT</b><span>SUPPPLE GROUP PLC</span></div>{[['Markets', 'Elections, sports, economics and commodities event contracts.'], ['AI-Generated Markets', 'New markets created and priced with AI assistance.'], ['Institutional', 'Deep liquidity and dedicated infrastructure for institutions.'], ['Global Expansion', 'Regulated market access expanding across new jurisdictions.']].map(([title, copy]) => <article key={title}><h3>{title}</h3><p>{copy}</p></article>)}</section><section className="predikt-expansion"><p className="eyebrow">GLOBAL EXPANSION</p><h2>Markets everywhere, regulated locally.</h2><div>{[['South Africa', 'Live'], ['United Kingdom', 'Application preparation'], ['Singapore', 'Application preparation'], ['Australia', 'Application preparation'], ['Germany', 'Application preparation'], ['Japan', 'Application preparation'], ['UAE', 'Application preparation'], ['Brazil', 'Application preparation'], ['Canada', 'Application preparation'], ['India', 'Application preparation']].map(([country, status]) => <p key={country}><span>{country}</span><b className={status === 'Live' ? 'is-live' : ''}>{status}</b></p>)}</div></section></div></main><Footer /></>;
+}
+
+function InstitutionalPage() {
+  return <><Header /><main className="information-page predikt-page"><div className="shell"><section className="predikt-intro"><p className="eyebrow">PREDIKT INSTITUTIONAL</p><h1>Infrastructure for professional markets.</h1><p className="page-intro">Institutional access to event-contract markets, live liquidity and exchange-grade market data.</p></section><section className="predikt-details"><article><h2>Institutional access</h2><p>Predikt Institutional supports professional participants with dedicated onboarding, market access, data and integration tools.</p><p>Connect to live order books, place orders, and receive automated settlement as markets resolve.</p></article><article><h2>How to start trading</h2><p>Get in touch with the Institutional team, complete entity verification and compliance checks, then connect and fund your account.</p><a className="text-link" href="mailto:investors@suppple.co.uk?subject=Predikt%20Institutional">Start an institutional enquiry →</a></article></section></div></main><Footer /></>;
 }
 
 const storyTimeline = [
@@ -200,23 +206,50 @@ function LegalPage({ privacy = false, cookies = false }: { privacy?: boolean; co
     ['Changes and Contact', 'The policy may be updated as technology, law or operations change. Cookie and privacy questions can be sent to info@suppple.co.uk.'],
   ];
   const sections = cookies ? cookiePolicy : privacy ? policy : terms;
-  return <><Header /><main className="information-page legal-page"><div className="shell"><p className="eyebrow">LEGAL</p><h1>{privacy ? 'Privacy & Data Protection' : 'Terms & Conditions'}</h1><p className="page-intro">{privacy ? 'How we collect, use and safeguard personal information.' : 'The terms that govern access to and use of Suppple services.'}</p><p className="legal-updated">{privacy ? 'Current policy basis: 5 January 2026.' : 'Current terms basis: 15 July 2025.'}</p><div className="legal-content">{sections.map(([heading, copy]) => <section key={heading}><h2>{heading}</h2><p>{copy}</p></section>)}</div><p className="legal-review">This locally hosted policy rendition should be reviewed and approved by Suppple&apos;s legal team before publication.</p></div></main><Footer /></>;
+  const title = cookies ? 'Cookie Policy' : privacy ? 'Privacy & Data Protection' : 'Terms & Conditions';
+  const intro = cookies ? 'How Suppple uses cookies and similar tracking technologies.' : privacy ? 'How we collect, use and safeguard personal information.' : 'The terms that govern access to and use of Suppple services.';
+  return <><Header /><main className="information-page legal-page"><div className="shell"><p className="eyebrow">LEGAL</p><h1>{title}</h1><p className="page-intro">{intro}</p><p className="legal-updated">{privacy || cookies ? 'Current policy basis: 5 January 2026.' : 'Current terms basis: 15 July 2025.'}</p><div className="legal-content">{sections.map(([heading, copy]) => <section key={heading}><h2>{heading}</h2><p>{copy}</p></section>)}</div><p className="legal-review">This locally hosted policy rendition should be reviewed and approved by Suppple&apos;s legal team before publication.</p></div></main><Footer /></>;
 }
 
 export default function App() {
-  if (window.location.pathname.startsWith('/platforms')) return <PlatformsPage />;
-  if (window.location.pathname.startsWith('/our-story')) return <StoryPage page="story" />;
-  if (window.location.pathname.startsWith('/company-overview')) return <StoryPage page="overview" />;
-  if (window.location.pathname.startsWith('/leadership')) return <StoryPage page="leadership" />;
-  if (window.location.pathname.startsWith('/board-of-directors')) return <StoryPage page="board" />;
-  if (window.location.pathname.startsWith('/timeline')) return <StoryPage page="timeline" />;
-  if (window.location.pathname.startsWith('/history')) return <StoryPage page="history" />;
-  if (window.location.pathname.startsWith('/governance')) return <InformationPage />;
-  if (window.location.pathname.startsWith('/investors')) return <InformationPage investor />;
-  if (window.location.pathname.startsWith('/news')) return <NewsOrCareersPage />;
-  if (window.location.pathname.startsWith('/careers')) return <NewsOrCareersPage careers />;
-  if (window.location.pathname.startsWith('/cookies')) return <LegalPage cookies />;
-  if (window.location.pathname.startsWith('/privacy')) return <LegalPage privacy />;
-  if (window.location.pathname.startsWith('/terms')) return <LegalPage />;
+  const [pathname, setPathname] = useState(() => window.location.pathname);
+
+  useEffect(() => {
+    const onPopState = () => setPathname(window.location.pathname);
+    const onLinkClick = (event: MouseEvent) => {
+      if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+      const target = event.target as Element | null;
+      const link = target?.closest('a[href]') as HTMLAnchorElement | null;
+      if (!link || link.target === '_blank' || link.hasAttribute('download')) return;
+      const destination = new URL(link.href, window.location.href);
+      if (destination.origin !== window.location.origin || !destination.pathname.startsWith('/')) return;
+      event.preventDefault();
+      window.history.pushState({}, '', `${destination.pathname}${destination.search}${destination.hash}`);
+      setPathname(destination.pathname);
+      requestAnimationFrame(() => {
+        if (destination.hash) document.querySelector(destination.hash)?.scrollIntoView({ block: 'start' });
+        else window.scrollTo({ top: 0, behavior: 'instant' as ScrollBehavior });
+      });
+    };
+    window.addEventListener('popstate', onPopState);
+    document.addEventListener('click', onLinkClick);
+    return () => { window.removeEventListener('popstate', onPopState); document.removeEventListener('click', onLinkClick); };
+  }, []);
+
+  if (pathname.startsWith('/platforms')) return <PlatformsPage />;
+  if (pathname.startsWith('/institutional')) return <InstitutionalPage />;
+  if (pathname.startsWith('/our-story')) return <StoryPage page="story" />;
+  if (pathname.startsWith('/company-overview')) return <StoryPage page="overview" />;
+  if (pathname.startsWith('/leadership')) return <StoryPage page="leadership" />;
+  if (pathname.startsWith('/board-of-directors')) return <StoryPage page="board" />;
+  if (pathname.startsWith('/timeline')) return <StoryPage page="timeline" />;
+  if (pathname.startsWith('/history')) return <StoryPage page="history" />;
+  if (pathname.startsWith('/governance')) return <InformationPage />;
+  if (pathname.startsWith('/investors')) return <InformationPage investor />;
+  if (pathname.startsWith('/news')) return <NewsOrCareersPage />;
+  if (pathname.startsWith('/careers')) return <NewsOrCareersPage careers />;
+  if (pathname.startsWith('/cookies')) return <LegalPage cookies />;
+  if (pathname.startsWith('/privacy')) return <LegalPage privacy />;
+  if (pathname.startsWith('/terms')) return <LegalPage />;
   return <Home />;
 }
