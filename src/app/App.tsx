@@ -248,8 +248,29 @@ function LegalPage({ privacy = false, cookies = false }: { privacy?: boolean; co
   const sections = cookies ? cookiePolicy : privacy ? policy : terms;
   const title = cookies ? 'Cookie Policy' : privacy ? 'Privacy & Data Protection' : 'Terms & Conditions';
   const intro = cookies ? 'How Suppple uses cookies and similar tracking technologies.' : privacy ? 'How we collect, use and safeguard personal information.' : 'The terms that govern access to and use of Suppple services.';
-  return <><Header /><main className="information-page legal-page"><div className="shell"><p className="eyebrow">LEGAL</p><h1>{title}</h1><p className="page-intro">{intro}</p><p className="legal-updated">{privacy || cookies ? 'Current policy basis: 5 January 2026.' : 'Current terms basis: 15 July 2025.'}</p><div className="legal-content">{sections.map(([heading, copy]) => <section key={heading}><h2>{heading}</h2><p>{copy}</p></section>)}</div><p className="legal-review">This locally hosted policy rendition should be reviewed and approved by Suppple&apos;s legal team before publication.</p></div></main><Footer /></>;
+  return <><Header /><main className="information-page legal-page"><div className="shell"><p className="eyebrow">LEGAL</p><h1>{title}</h1><p className="page-intro">{intro}</p><p className="legal-updated">{privacy || cookies ? 'Current policy basis: 5 January 2026.' : 'Current terms basis: 15 July 2025.'}</p><div className="legal-content">{sections.map(([heading, copy]) => <section key={heading}><h2>{heading}</h2><p>{copy}</p></section>)}</div></div></main><Footer /></>;
 }
+
+const SITE_NAME = 'Suppple Group';
+const HOME_TITLE = 'Suppple Group Plc | Building intelligent platforms';
+const routes: [string, string, () => JSX.Element][] = [
+  ['/platforms', 'Predikt', () => <PlatformsPage />],
+  ['/institutional', 'Predikt Institutional', () => <InstitutionalPage />],
+  ['/our-story', 'Our Story', () => <StoryPage page="story" />],
+  ['/company-overview', 'Company Overview', () => <StoryPage page="overview" />],
+  ['/leadership', 'Leadership', () => <StoryPage page="leadership" />],
+  ['/board-of-directors', 'Board of Directors', () => <StoryPage page="board" />],
+  ['/timeline', 'Our Timeline', () => <StoryPage page="timeline" />],
+  ['/history', 'Our Timeline', () => <StoryPage page="timeline" />],
+  ['/governance', 'Governance', () => <InformationPage />],
+  ['/investors', 'Investor Relations', () => <InformationPage investor />],
+  ['/news', 'News', () => <NewsOrCareersPage />],
+  ['/careers', 'Careers', () => <NewsOrCareersPage careers />],
+  ['/contact', 'Contact', () => <ContactPage />],
+  ['/cookies', 'Cookie Policy', () => <LegalPage cookies />],
+  ['/privacy', 'Privacy & Data Protection', () => <LegalPage privacy />],
+  ['/terms', 'Terms & Conditions', () => <LegalPage />],
+];
 
 export default function App() {
   const [pathname, setPathname] = useState(() => window.location.pathname);
@@ -276,21 +297,8 @@ export default function App() {
     return () => { window.removeEventListener('popstate', onPopState); document.removeEventListener('click', onLinkClick); };
   }, []);
 
-  if (pathname.startsWith('/platforms')) return <PlatformsPage />;
-  if (pathname.startsWith('/institutional')) return <InstitutionalPage />;
-  if (pathname.startsWith('/our-story')) return <StoryPage page="story" />;
-  if (pathname.startsWith('/company-overview')) return <StoryPage page="overview" />;
-  if (pathname.startsWith('/leadership')) return <StoryPage page="leadership" />;
-  if (pathname.startsWith('/board-of-directors')) return <StoryPage page="board" />;
-  if (pathname.startsWith('/timeline')) return <StoryPage page="timeline" />;
-  if (pathname.startsWith('/history')) return <StoryPage page="timeline" />;
-  if (pathname.startsWith('/governance')) return <InformationPage />;
-  if (pathname.startsWith('/investors')) return <InformationPage investor />;
-  if (pathname.startsWith('/news')) return <NewsOrCareersPage />;
-  if (pathname.startsWith('/careers')) return <NewsOrCareersPage careers />;
-  if (pathname.startsWith('/contact')) return <ContactPage />;
-  if (pathname.startsWith('/cookies')) return <LegalPage cookies />;
-  if (pathname.startsWith('/privacy')) return <LegalPage privacy />;
-  if (pathname.startsWith('/terms')) return <LegalPage />;
-  return <Home />;
+  const route = routes.find(([prefix]) => pathname.startsWith(prefix));
+  useEffect(() => { document.title = route ? `${route[1]} | ${SITE_NAME}` : HOME_TITLE; }, [route]);
+
+  return route ? route[2]() : <Home />;
 }
