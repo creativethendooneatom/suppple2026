@@ -14,7 +14,7 @@ export function Header() {
     return () => window.removeEventListener('scroll', updateHeader);
   }, []);
 
-  const links = [['Leadership', '/leadership'], ['Governance', '/governance'], ['Investors', '/investors'], ['News', '/news']];
+  const links = [['Leadership', '/leadership'], ['Governance', '/governance'], ['News', '/news']];
   const productLinks = [['Predikt', '/platforms'], ['How it works', '/platforms#how-it-works'], ['Markets', '/platforms#markets'], ['Features', '/platforms#features'], ['Predikt Institutional', '/institutional']];
   const companyLinks = [['Our Story', '/our-story'], ['Overview', '/company-overview'], ['Leadership', '/leadership'], ['Board of Directors', '/board-of-directors'], ['Timeline', '/timeline']];
   const irEmail = 'mailto:investors@suppple.co.uk?subject=Investor%20Relations%20Enquiry';
