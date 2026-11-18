@@ -1,5 +1,17 @@
 import logo from '../../assets/suppple-logo-official.svg';
 import { useEffect, useState } from 'react';
+import { portfolio, prediktPlatformPath } from '../portfolio';
+
+const productLinks = [
+  { label: portfolio.predikt.name, href: prediktPlatformPath },
+  { label: 'How it works', href: `${prediktPlatformPath}#how-it-works`, subLink: true },
+  { label: 'Markets', href: `${prediktPlatformPath}#markets`, subLink: true },
+  { label: 'Features', href: `${prediktPlatformPath}#features`, subLink: true },
+  { label: 'Predikt technical overview', href: portfolio.predikt.path, subLink: true },
+  { label: portfolio.grio.name, href: portfolio.grio.path },
+  { label: portfolio.makerrr.name, href: portfolio.makerrr.path },
+  { label: portfolio.supppleverify.name, href: portfolio.supppleverify.path },
+];
 
 export function Header() {
   const lightHeader = false;
@@ -15,8 +27,54 @@ export function Header() {
   }, []);
 
   const links = [['Leadership', '/leadership'], ['Governance', '/governance'], ['News', '/news']];
-  const productLinks = [['Predikt', '/platforms'], ['How it works', '/platforms#how-it-works'], ['Markets', '/platforms#markets'], ['Features', '/platforms#features']];
   const companyLinks = [['Our Story', '/our-story'], ['Overview', '/company-overview'], ['Leadership', '/leadership'], ['Board of Directors', '/board-of-directors'], ['Timeline', '/timeline']];
   const irEmail = 'mailto:investors@suppple.co.uk?subject=Investor%20Relations%20Enquiry';
-  return <header className={`site-header ${lightHeader ? 'site-header-light' : ''} ${lightHeader || isScrolled ? 'is-frosted' : ''} ${mobileMenuOpen ? 'menu-open' : ''}`}><a href="/" className="brand" aria-label="Suppple home"><img src={logo} alt="Suppple" /></a><nav aria-label="Main navigation"><div className="products-menu"><button type="button" aria-expanded={productsOpen} onClick={() => { setProductsOpen(open => !open); setCompanyOpen(false); }}>Products <span aria-hidden="true">⌄</span></button>{productsOpen && <div className="products-dropdown">{productLinks.map(([label, href], index) => <a href={href} key={label} className={index > 0 && index < 4 ? 'product-sub-link' : ''} onClick={() => setProductsOpen(false)}>{label}</a>)}</div>}</div><div className="products-menu company-menu"><button type="button" aria-expanded={companyOpen} onClick={() => { setCompanyOpen(open => !open); setProductsOpen(false); }}>Company <span aria-hidden="true">⌄</span></button>{companyOpen && <div className="products-dropdown">{companyLinks.map(([label, href]) => <a href={href} key={label} onClick={() => setCompanyOpen(false)}>{label}</a>)}</div>}</div>{links.map(([label, href]) => <a href={href} key={label}>{label}</a>)}</nav><a className="header-contact" href={irEmail}>Contact IR</a><button className="mobile-toggle" type="button" aria-label="Toggle navigation" aria-expanded={mobileMenuOpen} onClick={() => setMobileMenuOpen(open => !open)}>{mobileMenuOpen ? 'Close' : 'Menu'}</button>{mobileMenuOpen && <nav className="mobile-nav" aria-label="Mobile navigation"><span className="mobile-products-label">Products</span>{productLinks.map(([label, href]) => <a href={href} key={label} onClick={() => setMobileMenuOpen(false)}>{label}</a>)}<span className="mobile-products-label">Company</span>{companyLinks.map(([label, href]) => <a href={href} key={label} onClick={() => setMobileMenuOpen(false)}>{label}</a>)}{links.map(([label, href]) => <a href={href} key={label} onClick={() => setMobileMenuOpen(false)}>{label}</a>)}<a href={irEmail}>Contact IR</a></nav>}</header>;
+  return (
+    <header className={`site-header ${lightHeader ? 'site-header-light' : ''} ${lightHeader || isScrolled ? 'is-frosted' : ''} ${mobileMenuOpen ? 'menu-open' : ''}`}>
+      <a href="/" className="brand" aria-label="Suppple home"><img src={logo} alt="Suppple" /></a>
+      <nav aria-label="Main navigation">
+        <div className="products-menu">
+          <button type="button" aria-expanded={productsOpen} onClick={() => {
+            setProductsOpen(open => !open);
+            setCompanyOpen(false);
+          }}>Products <span aria-hidden="true">⌄</span></button>
+          {productsOpen && (
+            <div className="products-dropdown">
+              {productLinks.map(({ label, href, subLink }) => (
+                <a href={href} key={label} className={subLink ? 'product-sub-link' : undefined} onClick={() => setProductsOpen(false)}>{label}</a>
+              ))}
+            </div>
+          )}
+        </div>
+        <div className="products-menu company-menu">
+          <button type="button" aria-expanded={companyOpen} onClick={() => {
+            setCompanyOpen(open => !open);
+            setProductsOpen(false);
+          }}>Company <span aria-hidden="true">⌄</span></button>
+          {companyOpen && (
+            <div className="products-dropdown">
+              {companyLinks.map(([label, href]) => <a href={href} key={label} onClick={() => setCompanyOpen(false)}>{label}</a>)}
+            </div>
+          )}
+        </div>
+        {links.map(([label, href]) => <a href={href} key={label}>{label}</a>)}
+      </nav>
+      <a className="header-contact" href={irEmail}>Contact IR</a>
+      <button className="mobile-toggle" type="button" aria-label="Toggle navigation" aria-expanded={mobileMenuOpen} onClick={() => setMobileMenuOpen(open => !open)}>
+        {mobileMenuOpen ? 'Close' : 'Menu'}
+      </button>
+      {mobileMenuOpen && (
+        <nav className="mobile-nav" aria-label="Mobile navigation">
+          <span className="mobile-products-label">Products</span>
+          {productLinks.map(({ label, href, subLink }) => (
+            <a href={href} key={label} className={subLink ? 'product-sub-link' : undefined} onClick={() => setMobileMenuOpen(false)}>{label}</a>
+          ))}
+          <span className="mobile-products-label">Company</span>
+          {companyLinks.map(([label, href]) => <a href={href} key={label} onClick={() => setMobileMenuOpen(false)}>{label}</a>)}
+          {links.map(([label, href]) => <a href={href} key={label} onClick={() => setMobileMenuOpen(false)}>{label}</a>)}
+          <a href={irEmail}>Contact IR</a>
+        </nav>
+      )}
+    </header>
+  );
 }

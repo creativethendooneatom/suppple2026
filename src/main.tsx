@@ -10,6 +10,7 @@
   import "./styles/header-alignment.css";
   import "./styles/detail-tabs.css";
   import "./styles/investor-contrast.css";
+  import "./styles/portfolio-products.css";
 
   createRoot(document.getElementById("root")!).render(<App />);
   

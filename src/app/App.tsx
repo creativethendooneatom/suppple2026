@@ -1,9 +1,9 @@
 import { Footer } from './components/Footer';
 import { Header } from './components/Header';
 import { useEffect, useRef, useState } from 'react';
+import { PortfolioProductPage } from './pages/PortfolioProductPage';
+import { portfolio, prediktPlatformPath, type ProductId } from './portfolio';
 import prediktLogo from '../assets/predikt-logo-official.png';
-import makerrrLogo from '../assets/a43e4904f855e7ec564fd9161424505e0b04623c.png';
-import grioLogo from '../assets/096d4fc46974c6f935b21bbacbca7e805f856062.png';
 import goitse from '../assets/1991109401c94ed7cf0b3f3064a5c1c6ea670ff4.png';
 import phillip from '../assets/cc0b9900d37fc28609838772433a1e58f0663428.png';
 import leaAnne from '../assets/22ae7a4b8de1afffe70b6ec1a19f0332a3710d5c.png';
@@ -12,12 +12,6 @@ import lwazi from '../assets/82a33862dcddcab8b3e9ac7960dc24d6577d122d.png';
 import randall from '../assets/9736a521df3514cbe5baa43be8950201687822f1.png';
 import marina from '../assets/e2632e7dfe34966fabf1db2227321ed1111381bd.png';
 import timelineBanner from '../assets/timeline-banner.jpg';
-
-const platforms = [
-  ['Predikt', 'Prediction markets.', 'A regulated platform for forecasting future events through market participation.', prediktLogo],
-  ['Makerrr', 'AI-native creation.', 'Helping people create digital products through natural language.', makerrrLogo],
-  ['GRIO', 'Intelligent learning.', 'An AI-powered learning platform designed for education and workforce development.', grioLogo],
-];
 
 const board = [
   [goitse, 'Goitse Konopi', 'Executive Director', 'Brings product and engineering vision to the board, with a track record in civic-tech, public infrastructure and digital platforms.'],
@@ -85,7 +79,26 @@ function Home() {
         <ProductScreen />
       </section>
 
-      <section className="platform-section" aria-labelledby="platform-heading"><div className="shell"><p className="eyebrow">PLATFORMS</p><h2 id="platform-heading">Built to endure.</h2><div className="platform-grid">{platforms.map(([name, title, copy, logo]) => <article className="platform-card" key={name}><img src={logo as string} alt={`${name} logo`} /><h3>{title}</h3><p>{copy}</p><a href="#platforms">Learn more <span>→</span></a></article>)}</div></div></section>
+      <section id="portfolio" className="platform-section" aria-labelledby="platform-heading">
+        <div className="shell">
+          <p className="eyebrow">PLATFORMS</p>
+          <h2 id="platform-heading">Built to endure.</h2>
+          <div className="platform-grid">
+            {Object.values(portfolio).map(product => (
+              <article className="platform-card" key={product.path}>
+                <div className="platform-card-brand">
+                  {product.logo ? <img src={product.logo} alt={product.name} /> : <strong>{product.name}</strong>}
+                </div>
+                <h3>{product.category}</h3>
+                <p>{product.summary}</p>
+                <a href={product.path === portfolio.predikt.path ? prediktPlatformPath : product.path}>
+                  Explore {product.name} <span aria-hidden="true">→</span>
+                </a>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
 
       <section id="about" className="about-section shell"><div className="about-copy"><p className="eyebrow">ABOUT</p><h2>Suppple is a public company building and operating a portfolio of intelligent platforms.</h2><p>Founded in 2024, Suppple is building technology infrastructure for the next generation of Africa&apos;s digital economy.</p><p>Suppple is building long-term technology businesses with disciplined execution, responsible governance and a focus on enduring value.</p><a className="text-link" href="/our-story">Read our story <span>→</span></a></div><div className="fact-grid"><div><span>Founded</span><strong>2024</strong></div><div><span>Headquarters</span><strong>Cape Town<br />South Africa</strong></div></div></section>
 
@@ -102,7 +115,7 @@ function Home() {
 function PlatformsPage() {
   const markets = [['Will inflation exceed 3% this quarter?', '62%', 'YES 62c', 'NO 38c'], ['2028 presidential election — winner', '44%', 'YES 44c', 'NO 56c'], ['FIFA World Cup 2026 — winner', '19%', 'YES 19c', 'NO 81c'], ['Bitcoin above $200,000 by Dec 31?', '38%', 'YES 38c', 'NO 62c']];
   const features = [['⚡', 'Real-Time Markets', 'Thousands of markets updating continuously across every category.'], ['◎', 'Deep Liquidity', 'Order books designed to support professional-scale market activity.'], ['◈', 'Secure & Regulated', 'Built with compliance, custody and transparency at the core.'], ['⏱', 'Instant Settlement', 'Fast, fair and automatic settlement on every resolved contract.'], ['◫', 'Powerful API', 'Developer tooling for building on top of live market data.']];
-  return <><Header /><main className="information-page predikt-page"><div className="shell"><section className="predikt-intro" id="how-it-works"><p className="eyebrow">FLAGSHIP PLATFORM</p><img src={prediktLogo} alt="Predikt" className="feature-logo" /><h1>Markets for what happens next.</h1><p className="page-intro">A regulated exchange for event contracts — priced in real time by the collective judgment of every participant. Deeper liquidity, tighter spreads, faster settlement.</p><div className="predikt-tags">{['Event contracts', 'Elections', 'Sports', 'Economics', 'Commodities', 'AI-generated markets', 'Creator markets'].map(tag => <span key={tag}>{tag}</span>)}</div></section><section className="predikt-market-layout" id="markets"><div className="market-browser"><div className="market-browser-bar"><i /><i /><i /><span>predikt.com/markets</span></div>{markets.map(([question, probability, yes, no]) => <article key={question}><div><h2>{question}</h2><p><b>{yes}</b><span>{no}</span></p></div><strong>{probability}</strong></article>)}</div><div className="predikt-phone" aria-label="Predikt mobile market preview"><div className="phone-top">9:41 <span>●●●</span></div><div className="phone-brand">PREDIKT</div><p>Will Arsenal win the EPL this year?</p><div className="phone-bar"><i /></div><div className="phone-price"><b>YES 99c</b><span>NO 1c</span></div><div className="phone-actions"><b>YES 99c</b><span>NO 1c</span></div><p>Will Kaizer Chiefs win tonight?</p><div className="phone-bar phone-bar-two"><i /></div><div className="phone-price"><b>YES 62c</b><span>NO 38c</span></div></div></section><section className="predikt-details"><article><h2>How Predikt Works</h2><p>Predikt is Suppple&apos;s core product and primary revenue engine: an AI-powered prediction market platform that enables users to trade binary-outcome contracts on real-world events spanning macroeconomics, politics, entertainment and live global occurrences.</p><p>Each contract represents a verifiable yes/no claim, priced continuously between R0.00 and R1.00. The price is a direct mathematical expression of implied probability.</p></article><article><h2>Revenue Mechanics — Transparent &amp; Invariant</h2><p>A 10% trading fee applies on each matched contract&apos;s notional value, alongside a 1% settlement fee charged on winning contract payouts and retained in full by Suppple.</p><p>Suppple earns more as volumes grow, regardless of outcome — creating an exchange economics flywheel rather than a proprietary trading position.</p></article></section><section className="predikt-features" id="features"><p className="eyebrow">WHY PREDIKT</p><h2>Built for serious markets.</h2><div>{features.map(([icon, title, copy]) => <article key={title}><i>{icon}</i><h3>{title}</h3><p>{copy}</p></article>)}</div><aside><span>BUILT FOR INSTITUTIONAL-GRADE LIQUIDITY</span><b>Market Maker A</b><b>Market Maker B</b><b>Liquidity Partner C</b></aside></section><section className="predikt-ecosystem"><div className="ecosystem-center"><b>PREDIKT</b><span>SUPPPLE GROUP PLC</span></div>{[['Markets', 'Elections, sports, economics and commodities event contracts.'], ['AI-Generated Markets', 'New markets created and priced with AI assistance.'], ['Institutional', 'Deep liquidity and dedicated infrastructure for institutions.'], ['Global Expansion', 'Regulated market access expanding across new jurisdictions.']].map(([title, copy]) => <article key={title}><h3>{title}</h3><p>{copy}</p></article>)}</section><section className="predikt-expansion"><p className="eyebrow">GLOBAL EXPANSION</p><h2>Markets everywhere, regulated locally.</h2><div>{[['South Africa', 'Partner Licence Approved'], ['Tanzania', 'License In-Progress'], ['Malawi', 'License In-Progress'], ['Uganda', 'Application preparation'], ['Botswana', 'Application preparation'], ['Zambia', 'Application preparation'], ['Zimbabwe', 'Application preparation'], ['Mozambique', 'Application preparation'], ['Barbados', 'Application preparation'], ['United Kingdom', 'Application preparation']].map(([country, status]) => <p key={country}><span>{country}</span><b className={status.endsWith('Approved') ? 'is-approved' : ''}>{status}</b></p>)}</div></section></div></main><Footer /></>;
+  return <><Header /><main className="information-page predikt-page"><div className="shell"><section className="predikt-intro" id="how-it-works"><p className="eyebrow">FLAGSHIP PLATFORM</p><img src={prediktLogo} alt="Predikt" className="feature-logo" /><h1>Markets for what happens next.</h1><p className="page-intro">A regulated exchange for event contracts — priced in real time by the collective judgment of every participant. Deeper liquidity, tighter spreads, faster settlement.</p><div className="predikt-tags">{['Event contracts', 'Elections', 'Sports', 'Economics', 'Commodities', 'AI-generated markets', 'Creator markets'].map(tag => <span key={tag}>{tag}</span>)}</div><a className="text-link" href={portfolio.predikt.path}>Explore Predikt’s technical overview <span aria-hidden="true">→</span></a></section><section className="predikt-market-layout" id="markets"><div className="market-browser"><div className="market-browser-bar"><i /><i /><i /><span>predikt.com/markets</span></div>{markets.map(([question, probability, yes, no]) => <article key={question}><div><h2>{question}</h2><p><b>{yes}</b><span>{no}</span></p></div><strong>{probability}</strong></article>)}</div><div className="predikt-phone" aria-label="Predikt mobile market preview"><div className="phone-top">9:41 <span>●●●</span></div><div className="phone-brand">PREDIKT</div><p>Will Arsenal win the EPL this year?</p><div className="phone-bar"><i /></div><div className="phone-price"><b>YES 99c</b><span>NO 1c</span></div><div className="phone-actions"><b>YES 99c</b><span>NO 1c</span></div><p>Will Kaizer Chiefs win tonight?</p><div className="phone-bar phone-bar-two"><i /></div><div className="phone-price"><b>YES 62c</b><span>NO 38c</span></div></div></section><section className="predikt-details"><article><h2>How Predikt Works</h2><p>Predikt is Suppple&apos;s core product and primary revenue engine: an AI-powered prediction market platform that enables users to trade binary-outcome contracts on real-world events spanning macroeconomics, politics, entertainment and live global occurrences.</p><p>Each contract represents a verifiable yes/no claim, priced continuously between R0.00 and R1.00. The price is a direct mathematical expression of implied probability.</p></article><article><h2>Revenue Mechanics — Transparent &amp; Invariant</h2><p>A 10% trading fee applies on each matched contract&apos;s notional value, alongside a 1% settlement fee charged on winning contract payouts and retained in full by Suppple.</p><p>Suppple earns more as volumes grow, regardless of outcome — creating an exchange economics flywheel rather than a proprietary trading position.</p></article></section><section className="predikt-features" id="features"><p className="eyebrow">WHY PREDIKT</p><h2>Built for serious markets.</h2><div>{features.map(([icon, title, copy]) => <article key={title}><i>{icon}</i><h3>{title}</h3><p>{copy}</p></article>)}</div><aside><span>BUILT FOR INSTITUTIONAL-GRADE LIQUIDITY</span><b>Market Maker A</b><b>Market Maker B</b><b>Liquidity Partner C</b></aside></section><section className="predikt-ecosystem"><div className="ecosystem-center"><b>PREDIKT</b><span>SUPPPLE GROUP PLC</span></div>{[['Markets', 'Elections, sports, economics and commodities event contracts.'], ['AI-Generated Markets', 'New markets created and priced with AI assistance.'], ['Institutional', 'Deep liquidity and dedicated infrastructure for institutions.'], ['Global Expansion', 'Regulated market access expanding across new jurisdictions.']].map(([title, copy]) => <article key={title}><h3>{title}</h3><p>{copy}</p></article>)}</section><section className="predikt-expansion"><p className="eyebrow">GLOBAL EXPANSION</p><h2>Markets everywhere, regulated locally.</h2><div>{[['South Africa', 'Partner Licence Approved'], ['Tanzania', 'License In-Progress'], ['Malawi', 'License In-Progress'], ['Uganda', 'Application preparation'], ['Botswana', 'Application preparation'], ['Zambia', 'Application preparation'], ['Zimbabwe', 'Application preparation'], ['Mozambique', 'Application preparation'], ['Barbados', 'Application preparation'], ['United Kingdom', 'Application preparation']].map(([country, status]) => <p key={country}><span>{country}</span><b className={status.endsWith('Approved') ? 'is-approved' : ''}>{status}</b></p>)}</div></section></div></main><Footer /></>;
 }
 
 function InstitutionalPage() {
@@ -252,8 +265,15 @@ function LegalPage({ privacy = false, cookies = false }: { privacy?: boolean; co
 
 const SITE_NAME = 'Suppple Group';
 const HOME_TITLE = 'Suppple Group Plc | Building intelligent platforms';
-const routes: [string, string, () => JSX.Element][] = [
-  ['/platforms', 'Predikt', () => <PlatformsPage />],
+type Route = [path: string, title: string, render: () => JSX.Element];
+const productRoutes = (Object.keys(portfolio) as ProductId[]).map((id): Route => [
+  portfolio[id].path,
+  id === 'predikt' ? 'Predikt Technical Overview' : portfolio[id].name,
+  () => <PortfolioProductPage productId={id} />,
+]);
+const routes: Route[] = [
+  [prediktPlatformPath, 'Predikt', () => <PlatformsPage />],
+  ...productRoutes,
   ['/institutional', 'Predikt Institutional', () => <InstitutionalPage />],
   ['/our-story', 'Our Story', () => <StoryPage page="story" />],
   ['/company-overview', 'Company Overview', () => <StoryPage page="overview" />],
@@ -271,10 +291,18 @@ const routes: [string, string, () => JSX.Element][] = [
 ];
 
 export default function App() {
-  const [pathname, setPathname] = useState(() => window.location.pathname);
+  const [navigation, setNavigation] = useState(() => ({
+    pathname: window.location.pathname,
+    hash: window.location.hash,
+    scrollToTop: false,
+  }));
 
   useEffect(() => {
-    const onPopState = () => setPathname(window.location.pathname);
+    const onPopState = () => setNavigation({
+      pathname: window.location.pathname,
+      hash: window.location.hash,
+      scrollToTop: false,
+    });
     const onLinkClick = (event: MouseEvent) => {
       if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
       const target = event.target as Element | null;
@@ -284,18 +312,25 @@ export default function App() {
       if (destination.origin !== window.location.origin || !destination.pathname.startsWith('/')) return;
       event.preventDefault();
       window.history.pushState({}, '', `${destination.pathname}${destination.search}${destination.hash}`);
-      setPathname(destination.pathname);
-      requestAnimationFrame(() => {
-        if (destination.hash) document.querySelector(destination.hash)?.scrollIntoView({ block: 'start' });
-        else window.scrollTo({ top: 0, behavior: 'instant' as ScrollBehavior });
-      });
+      setNavigation({ pathname: destination.pathname, hash: destination.hash, scrollToTop: true });
     };
     window.addEventListener('popstate', onPopState);
     document.addEventListener('click', onLinkClick);
     return () => { window.removeEventListener('popstate', onPopState); document.removeEventListener('click', onLinkClick); };
   }, []);
 
-  const route = routes.find(([prefix]) => pathname.startsWith(prefix));
+  useEffect(() => {
+    const frame = requestAnimationFrame(() => {
+      if (navigation.hash) {
+        document.getElementById(navigation.hash.slice(1))?.scrollIntoView({ block: 'start' });
+      } else if (navigation.scrollToTop) {
+        window.scrollTo({ top: 0, behavior: 'instant' as ScrollBehavior });
+      }
+    });
+    return () => cancelAnimationFrame(frame);
+  }, [navigation]);
+
+  const route = routes.find(([prefix]) => navigation.pathname.startsWith(prefix));
   useEffect(() => { document.title = route ? `${route[1]} | ${SITE_NAME}` : HOME_TITLE; }, [route]);
 
   return route ? route[2]() : <Home />;
